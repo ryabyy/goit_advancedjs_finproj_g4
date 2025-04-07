@@ -1,0 +1,22 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+
+/* Modern-normalize */
+@import 'modern-normalize';
+
+/* Common variables */
+@import url('./utils/variables.css');
+
+/* Common styles */
+@import url('./base/reset.css');
+@import url('./base/fonts.css');
+@import url('./base/base.css');
+@import url('./base/animations.css');
+
+/* Sections style */
+@import url('./components/header.css');
+@import url('./components/footer.css');
