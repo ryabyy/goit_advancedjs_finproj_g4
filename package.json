@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/intm/",
+    "build": "vite build --base=/goit_advancedjs_finproj_g4/",
     "preview": "vite preview"
   },
   "devDependencies": {
