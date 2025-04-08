@@ -1,3 +1,28 @@
-/*em {*/
-/*  font-style: italic;*/
-/*}*/
+.hero__container {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*gap: 20px;*/
+}
+
+.hero__content {}
+
+.hero__title {
+    font-size: 38px;
+    font-weight: 500; /*// УТОЧНИТИ*/
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+
+    margin-bottom: 20px;
+}
+
+.hero__icon {
+    margin-right: 5px;
+}
+
+.hero__highlight {
+    font-style: italic;
+}
+
+.hero__subtitle {
+
+}
