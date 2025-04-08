@@ -6,3 +6,13 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/DMSans-Italic-VariableFont_opsz,wght.woff2')
+      format('woff2'),
+    url('../fonts/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
