@@ -1,9 +1,98 @@
 :root {
   /* Colors */
+  --white-color: #fff;
+  --light-color: #f4f4f4;
+  --gray-color: #d4d4d4;
+  --black-color: #242424;
+  --orange-color: #eea10c;
+  --violet-color: #9747ff;
+
   /* Borders */
+  --button-border-radius: 30px;
+  --field-border-radius: 30px;
+
+  --tag-border-radius: 30px;
+  --header-photo-border-radius: 20px;
+  --hero-border-radius: 60px;
+  --hero-border-radius-mobile: 30px;
+
+  --quote-section-border-radius: 20px;
+
+  --group-card-border-radius: 12px;
+  --exercise-card-border-radius: 15px;
+  --exercise-card-badge-border-radius: 15px;
+
+  --paging-number-border-radius: 18px;
+
+  --social-network-border-radius: 10px;
+
+  --modal-window-border-radius: 20px;
+  --modal-window-picture-border-radius: 12px;
+
   /* Icons */
+  --header-icon-width: 59px;
+  --header-icon-width-mobile: 38px;
+  --menu-icon-width-mobile: 32px;
+  --exercise-icon-width: 24px;
+  --exercise-start-icon-width: 16px;
+  --exercise-remove-icon-width: 16px;
+  --exercise-rating-icon-width: 18px;
+  --quote-icon-width: 34px;
+  --quote-icon-height: 32px;
+  --news-icon-width: 34px;
+  --news-icon-height: 32px;
+
   /* Fonts */
   --common-font: DM Sans;
+
+  --button-font-size: 16px;
+  --button-font-size-mobile: 14px;
+  --field-font-size: 16px;
+  --field-font-size-mobile: 14px;
+
+  --header-font-size: 74px;
+  --header-font-size: 38px;
+
+  --subheader-font-size: 18px;
+  --subheader-font-size: 14px;
+
+  --tag-font-size: 16px;
+  --tag-font-size-mobile: 14px;
+
+  --tab-font-size: 16px;
+  --tab-font-size-mobile: 14px;
+
+  --group-card-header-font-size: 24px;
+  --group-card-header-font-size-mobile: 20px;
+  --group-card-subheader-font-size: 12px;
+
+  --exercise-card-header-font-size: 24px;
+  --exercise-card-header-font-size-mobile: 20px;
+  --exercise-card-info-font-size: 12px;
+  --exercise-card-rating-font-size: 12px;
+  --exercise-card-badge-font-size: 12px;
+  --exercise-card-start-font-size: 16px;
+  --exercise-card-start-font-size-mobile: 14px;
+
+  --quote-header-font-size: 24px;
+  --quote-header-font-size-mobile: 20px;
+  --quote-text-font-size: 14px;
+  --quote-author-font-size: 16px;
+  --quote-author-font-size-mobile: 14px;
+
+  --news-header-font-size: 24px;
+  --news-header-font-size-mobile: 20px;
+  --news-subheader-font-size: 14px;
+  --news-text-font-size: 14px;
+
+  --paging-font-size: 24px;
+  --paging-font-size-mobile: 20px;
+
   /* Transitions */
+  --default-trns: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   /* Animations */
+  --button-zoom-duration: 100ms;
+  --button-zoom-timing: linear;
+  --button-zoom-factor: 1.02;
 }
