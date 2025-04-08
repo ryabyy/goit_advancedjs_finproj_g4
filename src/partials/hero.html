@@ -1,0 +1,60 @@
+<section class="section hero container">
+  <div class="hero__container">
+    <div class="hero__content">
+      <div class="hero__icon">
+        <svg class="logo" width="38" height="38">
+          <use href="sprite.svg#logo"></use>
+        </svg>
+      </div>
+      <h1 class="hero__title">
+        Get <span>Body</span> in shape,
+        Stay healthy
+      </h1>
+
+      <button class="hero__button application-button">
+        Leave an application
+      </button>
+    </div>
+
+    <picture>
+      <source
+        srcset="./img/hero/hero-desk.webp 1x, ./img/hero/hero-desk@2x.webp 2x"
+        media="(min-width: 1280px)"
+        type="image/webp"
+      />
+      <source
+        srcset="./img/hero/hero-desk.jpg 1x, ./img/hero/hero-desk@2x.jpg 2x"
+        media="(min-width: 1280px)"
+      />
+      <source
+        srcset="./img/hero/hero-tab.webp 1x, ./img/hero/hero-tab@2x.webp 2x"
+        media="(min-width: 768px)"
+        type="image/webp"
+      />
+      <source
+        srcset="./img/hero/hero-tab.jpg 1x, ./img/hero/hero-tab@2x.jpg 2x"
+        media="(min-width: 768px)"
+      />
+      <source
+        srcset="./img/hero/hero-mob.webp 1x, ./img/hero/hero-mob@2x.webp 2x"
+        media="(max-width: 767px)"
+        type="image/webp"
+      />
+      <source
+        srcset="./img/hero/hero-mob.jpg 1x, ./img/hero/hero-mob@2x.jpg 2x"
+        media="(max-width: 767px)"
+      />
+      <img
+        src="./img/hero/hero-mob.jpg"
+        alt="Smiling girl learning English"
+        class="hero__image"
+      />
+    </picture>
+
+    <a href="#footer" class="hero__arrow" aria-label="Scroll down">
+      <svg class="hero__arrow-icon">
+        <use href="./img/sprite.svg#icon-arrow"></use>
+      </svg>
+    </a>
+  </div>
+</section>
