@@ -15,28 +15,21 @@
 
 }
 
-.hero__content {}
-
+.hero__content {
+}
 
 
 .hero__title {
-    /*display: flex;*/
-    /*align-items: center;*/
-
     margin-bottom: 20px;
 }
 
 .hero__title-icon {
-    /*display: inline;*/
-
     width: 38px;
     height: 38px;
-    margin-right: 5px;
+    margin-bottom: -5px;
 }
 
 .hero__title-text {
-    /*display: inline;*/
-
     font-size: 38px;
     font-weight: 450; /*// УТОЧНИТИ*/
     line-height: 1.16;
@@ -53,7 +46,8 @@
     letter-spacing: -0.02em;
 }
 
-.hero__image {}
+.hero__image {
+}
 
 .hero__image-pic {
     /*min-width: 335px;*/
