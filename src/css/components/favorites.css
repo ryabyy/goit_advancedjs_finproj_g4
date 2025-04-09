@@ -1,13 +1,5 @@
 @import url('./quote.css');
 
-/*body {*/
-/*  background-color: #F4F4F4;*/
-/*}*/
-
-/*.section {*/
-/*  padding: 0 20px;*/
-/*}*/
-
 .favorites__norm {
   display: flex;
   flex-direction: column;
@@ -20,13 +12,13 @@
   color: #242424;
 }
 
-.norm__text__title {
+.norm__text--title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
 }
 
-.norm__text__text {
+.norm__text--body {
   margin-top: 10px;
   color: #24242499;
 }

@@ -10,7 +10,7 @@
   margin-right: 20px;
 }
 
-.quote__title__text {
+.quote__title--text {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
@@ -22,11 +22,11 @@
   line-height: 1.285;
 }
 
-.quote__text__text {
+.quote__text--text {
   color: #F4F4F499;
 }
 
-.quote__text__author {
+.quote__text--author {
   margin-top: 10px;
 }
 
@@ -34,3 +34,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 1280px) {}
