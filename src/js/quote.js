@@ -4,8 +4,8 @@ const quote = {
   quote: "I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.'"
 };
 
-const textQuote = document.querySelector('.daily-text__text-quote');
-const textAuthor = document.querySelector('.daily-text__text-author');
+const textQuote = document.querySelector('.quote__text__text');
+const textAuthor = document.querySelector('.quote__text__author');
 
 export function updateQuote({ quote, author }) {
   textQuote.style.innerText = quote;

@@ -1,52 +1,14 @@
-body {
-  background-color: #F4F4F4;
-}
+@import url('./quote.css');
 
-h4 {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1;
-}
+/*body {*/
+/*  background-color: #F4F4F4;*/
+/*}*/
 
-p {
-  font-size: 14px;
-  line-height: 1.285;
-}
+/*.section {*/
+/*  padding: 0 20px;*/
+/*}*/
 
-.section {
-  padding: 0 20px;
-}
-
-.quote__daily {
-  display: flex;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #242424;
-  color: #F4F4F4;
-}
-
-.quote__daily__man-icon {
-  margin-right: 20px;
-}
-
-.daily-text__text {
-  margin-top: 10px;
-}
-
-.daily-text__text-quote {
-  color: #F4F4F499;
-}
-
-.daily-text__text-author {
-  margin-top: 10px;
-}
-
-.daily-text__title {
-  display: flex;
-  justify-content: space-between;
-}
-
-.quote__norm {
+.favorites__norm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -58,18 +20,24 @@ p {
   color: #242424;
 }
 
-.quote__norm__text-text {
+.norm__text__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.norm__text__text {
   margin-top: 10px;
   color: #24242499;
 }
 
-.quote__img {
+.favorites__img {
   margin-top: 20px;
   width: 100%;
   height: 119px;
 }
 
-.quote__img img {
+.favorites__img img {
   width: 100%;
   height: 100%;
   border-radius: 20px;
