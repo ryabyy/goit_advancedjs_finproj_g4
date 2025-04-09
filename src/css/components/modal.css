@@ -1,0 +1,26 @@
+.modal_container {
+  display: flex;
+  max-width: 335px; /* fixme? */
+
+  flex-direction: column;
+  border-radius: 20px;
+  background: var(--black-color);
+  color: var(--light-color);
+
+  padding-top: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+
+.modal_exercise_image {
+  border-radius: 12px;
+  width: 295px;
+  height: 258px;
+}
+
+.model_exercise_info_layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
