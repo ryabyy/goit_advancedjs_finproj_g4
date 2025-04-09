@@ -1,12 +1,13 @@
 @import url('./quote.css');
+@import url('./exer-item.css');
 
-/*body {*/
-/*  background-color: #F4F4F4;*/
-/*}*/
+body {
+  background-color: #F4F4F4;
+}
 
-/*.section {*/
-/*  padding: 0 20px;*/
-/*}*/
+.section {
+  padding: 0 20px;
+}
 
 .favorites__norm {
   display: flex;
@@ -43,6 +44,10 @@
   border-radius: 20px;
   object-fit: cover;
   object-position: top;
+}
+
+.exer-list__item {
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 768px) {}
