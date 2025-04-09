@@ -1,6 +1,6 @@
 @import url('./quote.css');
 
-.favorites__norm {
+.favorites__hint {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,13 +12,13 @@
   color: #242424;
 }
 
-.norm__text--title {
+.hint-content__title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
 }
 
-.norm__text--body {
+.hint-content__text {
   margin-top: 10px;
   color: #24242499;
 }

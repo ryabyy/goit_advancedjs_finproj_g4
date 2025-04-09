@@ -1,36 +1,33 @@
 .quote {
   display: flex;
+  gap: 20px;
   padding: 20px;
   border-radius: 20px;
   background-color: #242424;
   color: #F4F4F4;
 }
 
-.quote__icon {
-  margin-right: 20px;
-}
-
-.quote__title--text {
+.quote-header__title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
 }
 
-.quote__text {
+.quote-body {
   margin-top: 10px;
   font-size: 14px;
   line-height: 1.285;
 }
 
-.quote__text--text {
+.quote-body__text {
   color: #F4F4F499;
 }
 
-.quote__text--author {
+.quote-body__author {
   margin-top: 10px;
 }
 
-.quote__title {
+.quote-header {
   display: flex;
   justify-content: space-between;
 }

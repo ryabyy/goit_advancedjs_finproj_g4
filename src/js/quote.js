@@ -1,5 +1,5 @@
-const TEXT_QUOTE = document.querySelector('.quote__text--text');
-const TEXT_AUTHOR = document.querySelector('.quote__text--author');
+const TEXT_QUOTE = document.querySelector('.quote-body__text');
+const TEXT_AUTHOR = document.querySelector('.quote-body__author');
 
 export function updateQuote({ quote, author }) {
   TEXT_QUOTE.style.innerText = quote;
