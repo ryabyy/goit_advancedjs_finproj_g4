@@ -1,6 +1,11 @@
 @import url('./quote.css');
 @import url('./exer-item.css');
 
+body {
+  background-color: #f4f4f4;
+  padding: 0 20px;
+}
+
 .favorites__hint {
   display: flex;
   flex-direction: column;

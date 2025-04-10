@@ -179,7 +179,7 @@ function getStatsElement(name, className) {
 function getIcon(width, height, id) {
   const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
   const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-  use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `./img/sprite.svg#${id}`);
+  use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `../assets/img/sprite.svg#${id}`);
   icon.setAttribute('width', width);
   icon.setAttribute('height', height);
   icon.append(use);
