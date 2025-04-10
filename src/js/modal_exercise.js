@@ -19,17 +19,21 @@ export function showExerciseDetails(exercise) {
               exercise.gifUrl
             }" width="295" height="258">
 
-            <p class="modal_exercise_title">${exercise.name}</p>
+            <div class="modal_exercise_details_layout">
+              <p class="modal_exercise_title">${exercise.name}</p>
 
-            <div class="modal_exercise_rating_layout">
-                <p class="modal_exercise_rating">${exercise.rating.toString()}</p>
+              <div class="modal_exercise_rating_layout">
+                  <p class="modal_exercise_rating">${exercise.rating.toString()}</p>
+              </div>
+
+              <div class="model_exercise_info_layout">
+                  ${createInfoLayoutMarkup(infoItems)}
+              </div>
+
+              <p class="modal_exercise_description">${exercise.description}</p>
+
+              <button class="modal_exercise_add_to_favourites_button">Add to favorites</button>
             </div>
-
-            <div class="model_exercise_info_layout">
-                ${createInfoLayoutMarkup(infoItems)}
-            </div>
-
-            <p class="modal_exercise_description">${exercise.description}</p>
         </div>
     `);
 
@@ -45,9 +49,9 @@ function createInfoLayoutMarkup(infoItems) {
 
     markups.push(
       `<div class="modal_exercise_info_item">
-                <p class="name">${name}</p>
-                <p class="value">${value}</p>
-            </div>`
+            <p class="name">${name}</p>
+            <p class="value">${value}</p>
+      </div>`
     );
   }
 
