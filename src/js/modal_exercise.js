@@ -13,8 +13,22 @@ export function showExerciseDetails(exercise) {
     'Burned Calories': `${exercise.burnedCalories} / ${exercise.time} min`,
   };
 
-  const instance = basicLightbox.create(`
+  // FIXME remove not neded
+  // <svg class="modal-close-button-icon" width="24" height="24">
+  //   <use href="./img/sprite.svg#icon-close"></use>
+  // </svg>
+
+  // <svg class="modal-close-button-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //                <path d="M11 1L1 11M1 1L11 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  //            </svg>
+  const instance = basicLightbox.create(
+    `
         <div class="modal_container">
+            <button class="modal-close-button" type="button">
+              <svg class="modal-close-button-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M11 1L1 11M1 1L11 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+             </svg>
+            </button>
             <img class="modal_exercise_image" src="${
               exercise.gifUrl
             }" width="295" height="258">
@@ -35,7 +49,14 @@ export function showExerciseDetails(exercise) {
               <button class="modal_exercise_add_to_favourites_button">Add to favorites</button>
             </div>
         </div>
-    `);
+    `,
+    {
+      onShow: instance => {
+        instance.element().querySelector('.modal-close-button').onclick =
+          instance.close;
+      },
+    }
+  );
 
   instance.show();
 }

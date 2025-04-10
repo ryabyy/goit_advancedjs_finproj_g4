@@ -1,4 +1,5 @@
 .modal_container {
+  position: relative;
   display: flex;
   max-width: 335px; /* fixme? */
   min-width: 335px;
@@ -8,10 +9,39 @@
   background: var(--black-color);
   color: var(--light-color);
 
-  padding-top: 14px;
+  padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 40px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--light-color);
+  background-color: transparent;
+
+  border: 0px;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  color: var(--orange-color);
+}
+
+.modal-close-button-icon {
+  fill: currentColor;
+  stroke: currentColor;
 }
 
 .modal_exercise_image {
