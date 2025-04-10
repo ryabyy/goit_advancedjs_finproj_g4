@@ -56,11 +56,28 @@
     </div>
     <div class="hero__tags">
       <div class="hero__tags-image">
-        <img
-          alt="Young women doing fitness outdoors together"
-          class="hero__tags-image-pic"
-          src="./img/young-women-doing-fitness-outdoors-together 1.png"
-        />
+        <picture>
+          <source
+            srcset="
+                    ./assets/img/home/foot-image.webp 1x,
+                    ./assets/img/home/foot-image@2x.webp 2x
+                "
+            type="image/webp"
+          />
+          <source
+            srcset="
+                    ./assets/img/home/foot-image.png 1x,
+                    ./assets/img/home/foot-image@2x.png 2x
+                "
+            type="image/png"
+          />
+          <img
+            alt="Young women doing fitness outdoors together"
+            class="hero__tags-image-pic"
+            src="./assets/img/home/foot-image.png"
+          />
+        </picture>
+
       </div>
       <div class="hero__tags-list"></div>
     </div>
