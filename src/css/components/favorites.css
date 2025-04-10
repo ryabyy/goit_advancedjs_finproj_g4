@@ -1,0 +1,54 @@
+@import url('./quote.css');
+@import url('exer-card-ph.css');
+@import url('exer-card.css');
+
+body {
+  background-color: #f4f4f4;
+  padding: 0 20px;
+}
+
+.favorites__hint {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+  height: 119px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #242424;
+}
+
+.hint-content__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.hint-content__text {
+  margin-top: 10px;
+  color: #24242499;
+}
+
+.favorites__img {
+  margin-top: 20px;
+  width: 100%;
+  height: 119px;
+}
+
+.favorites__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.exer-list__card {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 1280px) {}
+
