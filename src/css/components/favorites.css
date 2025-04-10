@@ -1,5 +1,5 @@
 @import url('./quote.css');
-@import url('./exer-item.css');
+@import url('exer-card.css');
 
 body {
   background-color: #f4f4f4;
@@ -43,7 +43,7 @@ body {
   object-position: top;
 }
 
-.exer-list__item {
+.exer-list__card {
   margin-top: 20px;
 }
 

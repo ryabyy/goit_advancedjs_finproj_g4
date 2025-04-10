@@ -1,4 +1,4 @@
-.exer-list__item {
+.exer-list__card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,17 +8,17 @@
   background-color: #ffffff;
 }
 
-.exer-item__header {
+.exer-card__header {
   display: flex;
   justify-content: space-between;
 }
 
-.exer-item__tag-box {
+.exer-card__tag-box {
   display: flex;
   align-items: center;
 }
 
-.exer-item__tag {
+.exer-card__tag {
   margin-right: 8px;
   padding: 6px 8px;
   font-weight: 500;
@@ -28,18 +28,17 @@
   border-radius: 15px;
 }
 
-.exer-item__post-tag {
+.exer-card__post-tag {
   display: flex;
   align-items: center;
 }
 
-.exer-item__post-tag span {
+.exer-card__post-tag span {
   margin-right: 4px;
   font-size: 12px;
-  /*line-height: 1;*/
 }
 
-.exer-item__post-tag button {
+.exer-card__post-tag button {
   display: flex;
   align-items: center;
   padding: 0;
@@ -48,7 +47,7 @@
   background-color: transparent;
 }
 
-.exer-item__start-btn {
+.exer-card__start-btn {
   display: flex;
   align-items: center;
   font-size: 16px;
@@ -58,35 +57,35 @@
   color: #242424;
 }
 
-.exer-item__start-btn svg {
+.exer-card__start-btn svg {
   margin-left: 8px;
 }
 
-.exer-item__name {
+.exer-card__name {
   display: flex;
 }
 
-.exer-item__name__icon {
+.exer-card__name__icon {
   margin-right: 16px;
   color: #242424;
 }
 
-.exer-item__name__text {
+.exer-card__name__text {
   font-size: 20px;
   line-height: 1;
 }
 
-.exer-item__stats {
+.exer-card__stats {
   display: flex;
   justify-content: space-between;
 }
 
-.exer-item__stats__param {
+.exer-card__stats__param {
   font-size: 12px;
   line-height: 1.5;
   color: #24242466;
 }
 
-.exer-item__stats__param span {
+.exer-card__stats__param span {
   color: #242424;
 }
