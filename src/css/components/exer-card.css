@@ -1,0 +1,91 @@
+.exer-list__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  height: 141px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.exer-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exer-card__tag-box {
+  display: flex;
+  align-items: center;
+}
+
+.exer-card__tag {
+  margin-right: 8px;
+  padding: 6px 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid #242424;
+  border-radius: 15px;
+}
+
+.exer-card__post-tag {
+  display: flex;
+  align-items: center;
+}
+
+.exer-card__post-tag span {
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.exer-card__post-tag button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.exer-card__start-btn {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.5;
+  border: none;
+  background-color: transparent;
+  color: #242424;
+}
+
+.exer-card__start-btn svg {
+  margin-left: 8px;
+}
+
+.exer-card__name {
+  display: flex;
+}
+
+.exer-card__name__icon {
+  margin-right: 16px;
+  color: #242424;
+}
+
+.exer-card__name__text {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.exer-card__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exer-card__stats__param {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #24242466;
+}
+
+.exer-card__stats__param span {
+  color: #242424;
+}
