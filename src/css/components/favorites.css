@@ -1,15 +1,7 @@
 @import url('./quote.css');
 @import url('./exer-item.css');
 
-body {
-  background-color: #F4F4F4;
-}
-
-.section {
-  padding: 0 20px;
-}
-
-.favorites__norm {
+.favorites__hint {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,13 +13,13 @@ body {
   color: #242424;
 }
 
-.norm__text__title {
+.hint-content__title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
 }
 
-.norm__text__text {
+.hint-content__text {
   margin-top: 10px;
   color: #24242499;
 }
