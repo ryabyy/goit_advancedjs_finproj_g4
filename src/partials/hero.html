@@ -1,26 +1,11 @@
 <section class="section hero container">
-
   <div class="hero__container">
-
     <div class="hero__content">
       <div class="hero__title">
         <h1 class="hero__title-text">
-          <!--          <svg class="hero__title-icon" fill="none" height="38" viewBox="0 0 38 38" width="38"-->
-          <!--               xmlns="http://www.w3.org/2000/svg">-->
-          <!--            <path clip-rule="evenodd"-->
-          <!--                  d="M16.9997 16.1754L17.433 16.6215L12.107 1.29404L18.2093 15.6512L18.453 16.2246L18.474 15.6018L19 0L19.526 15.6015L19.547 16.2246L19.7906 15.6515L25.893 1.29404L20.7716 16.0328L20.567 16.6215L21.0003 16.1754L31.8551 5.00141L21.7779 16.8869L21.3755 17.3616L36.081 10.6214L22.4091 18.0484L21.8631 18.345L22.4825 18.3086L38 17.395L21.964 19.439L37.353 24.4074L22.2672 20.6459L21.6646 20.4957L22.1469 20.8878L34.2273 30.7115L21.5132 21.7311L21.0054 21.3724L21.314 21.913L29.0451 35.456L20.4198 22.4694L20.0753 21.9507L22.5062 38L19 22.1526L15.4938 38L17.8313 22.5671L17.9247 21.9507L17.5804 22.4691L8.95494 35.456L16.6858 21.9133L16.9946 21.3724L16.4871 21.7309L3.77271 30.7115L15.8529 20.888L16.3354 20.4957L15.7332 20.6458L0.647022 24.4074L15.445 19.6298L16.036 19.439L0 17.395L16.1369 18.345L15.5912 18.0486L1.91903 10.6214L16.6245 17.3616L6.14495 5.00141L16.9997 16.1754ZM18.1089 16.853L17.3381 17.3323L16.7918 18.0589L16.5437 18.9346L16.6273 19.8411L17.0314 20.6561L17.7014 21.2695L18.5467 21.5984H19.4533L20.2986 21.2695L20.9686 20.6561L21.3727 19.8411L21.4563 18.9346L21.2082 18.0589L20.6619 17.3323L19.8911 16.853L19 16.6857L18.1089 16.853Z"-->
-          <!--                  fill="#242424"-->
-          <!--                  fill-rule="evenodd" />-->
-          <!--          </svg>-->
-
           <svg class="hero__title-icon" height="38" width="38">
-            <use href="./img/sprite.svg#icon-sun"></use>
+            <use href="./assets/img/sprite.svg#icon-sun"></use>
           </svg>
-
-
-          <!--          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" id="icon-sun">-->
-          <!--            <path d="M28.4395 25.972L30 25.6803L31.5605 25.972L32.9102 26.8077L33.8669 28.0745L34.3013 29.6014L34.1548 31.1822L33.4472 32.6032L32.274 33.6727L30.7938 34.2462H29.2062L27.726 33.6727L26.5528 32.6032L25.8452 31.1822L25.6987 29.6014L26.1331 28.0745L27.0898 26.8077L28.4395 25.972Z" stroke="#242424" stroke-width="4"></path>-->
-          <!--          </svg>-->
           Get <span class="hero__highlight">Body</span> in shape,
           Stay healthy
         </h1>
@@ -32,19 +17,47 @@
     </div>
     <div class="hero__image">
       <picture>
-        <source
-          srcset="
-                    ./assets/img/home/women-working-out-outdoors.webp 1x,
-                    ./assets/img/home/women-working-out-outdoors@2x.webp 2x
+        <source media="(min-width: 1440px)"
+                srcset="
+                    ./assets/img/home/women-working-out-outdoors-desk.webp 1x,
+                    ./assets/img/home/women-working-out-outdoors-desk@2x.webp 2x
                 "
-          type="image/webp"
+                type="image/webp"
         />
-        <source
-          srcset="
-                    ./assets/img/home/women-working-out-outdoors.png 1x,
-                    ./assets/img/home/women-working-out-outdoors@2x.png 2x
+        <source media="(min-width: 1440px)"
+                srcset="
+                    ./assets/img/home/women-working-out-outdoors-desk.png 1x,
+                    ./assets/img/home/women-working-out-outdoors-desk@2x.png 2x
                 "
-          type="image/png"
+                type="image/png"
+        />
+        <source media="(min-width: 768px)"
+                srcset="
+                    ./assets/img/home/women-working-out-outdoors-tab.webp 1x,
+                    ./assets/img/home/women-working-out-outdoors-tab@2x.webp 2x
+                "
+                type="image/webp"
+        />
+        <source media="(min-width: 768px)"
+                srcset="
+                    ./assets/img/home/women-working-out-outdoors-tab.png 1x,
+                    ./assets/img/home/women-working-out-outdoors-tab@2x.png 2x
+                "
+                type="image/png"
+        />
+        <source media="(max-width: 768px)"
+                srcset="
+                    ./assets/img/home/women-working-out-outdoors-mob.webp 1x,
+                    ./assets/img/home/women-working-out-outdoors-mob@2x.webp 2x
+                "
+                type="image/webp"
+        />
+        <source media="(max-width: 768px)"
+                srcset="
+                    ./assets/img/home/women-working-out-outdoors-mob.png 1x,
+                    ./assets/img/home/women-working-out-outdoors-mob@2x.png 2x
+                "
+                type="image/png"
         />
         <img
           alt="Women in sportswear working out outdoors"
@@ -52,7 +65,6 @@
           src="./assets/img/home/women-working-out-outdoors.png"
         />
       </picture>
-
     </div>
     <div class="hero__tags">
       <div class="hero__tags-image">
@@ -77,12 +89,8 @@
             src="./assets/img/home/foot-image.png"
           />
         </picture>
-
       </div>
       <ul class="hero__tags-list js-hero__tags-list"></ul>
-
     </div>
-
   </div>
-
 </section>

@@ -14,12 +14,7 @@
   gap: 20px;
 
   min-width: 335px;
-
 }
-
-.hero__content {
-}
-
 
 .hero__title {
   margin-bottom: 20px;
@@ -46,17 +41,8 @@
   letter-spacing: -0.02em;
 }
 
-.hero__image {
-}
-
 .hero__image-pic {
   border-radius: 30px;
-}
-
-.hero__tags {
-}
-
-.hero__tags-image {
 }
 
 .hero__tags-image-pic {
@@ -112,9 +98,6 @@
     margin-left: auto;
   }
 
-  .hero__tags-list {
-  }
-
   .hero__tags-item {
     height: 32px;
     padding: 4px 15px;
@@ -155,10 +138,6 @@
   .hero__image {
     order: 3;
     grid-column: 1 / 3;
-  }
-
-  .hero__image-pic {
-    min-width: 1376px;
   }
 
   .hero__tags-image {
