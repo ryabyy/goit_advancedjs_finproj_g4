@@ -1,7 +1,54 @@
 <header class="header">
-  <div class="container">
+  <div class="header__container container">
     <nav class="nav">
-      
+      <a href="./index.html" id="logo-button" class="nav__logo">
+        <img
+          src="./assets/img/your-energy-logo.svg"
+          alt="Logo"
+          width="132"
+          height="14"
+        />
+      </a>
+
+      <div class="categories">
+        <div class="categories-container">
+          <div class="switcher"></div>
+
+          <div class="category category--active">
+            <a class="category__link" id="home-page-button" href="#">home</a>
+          </div>
+
+          <div class="category">
+            <a class="category__link" id="favorites-page-button" href="#">favorites</a>
+          </div>
+        </div>
+      </div>
+
+      <ul class="nav__networks">
+        <li class="nav__network-item">
+          <a href="" class="nav__network-link">
+            <svg class="nav__icon" width="28" height="28">
+              <use href="./assets/img/sprite.svg#facebook-gray"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="nav__network-item">
+          <a href="" class="nav__network-link">
+            <svg class="nav__icon" width="28" height="28">
+              <use href="./assets/img/sprite.svg#instagram-gray"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="nav__network-item">
+          <a href="" class="nav__network-link">
+            <svg class="nav__icon" width="28" height="28">
+              <use href="./assets/img/sprite.svg#youtube-gray"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </nav>
   </div>
+
+  <script type="module" src="./js/header.js"></script>
 </header>

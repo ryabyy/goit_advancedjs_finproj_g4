@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>YourEnergy</title>
-  <meta content="YourEnergy" name="title" />
-  <meta
-    content="Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support."
-    name="description"
-  />
-  <link href="./css/main.css" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>YourEnergy</title>
+    <meta content="YourEnergy" name="title" />
+    <meta
+      content="Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support."
+      name="description"
+    />
+    <link href="./css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <load
+      icon-path="./assets/img/sprite.svg#logo"
+      src="./partials/header.html"
+    />
+    <main>
+      <section id="home-page">
+        <load src="./partials/hero.html" />
+        <load src="./partials/exercises.html" />
+      </section>
+      <section id="favorites-page" style="display: none">
+        <load src="./partials/favorites.html" />
+      </section>
+    </main>
 
-</head>
-<body>
-<load icon-path="img/sprite.svg#logo" src="./partials/header.html" />
+    <load src="./partials/footer.html" />
 
-<main>
-  <!-- Loads the specified .html file -->
-  <load src="./partials/hero.html" />
-</main>
-
-<load src="./partials/footer.html" />
-
-<script src="./main.js" type="module"></script>
-</body>
+    <script src="./main.js" type="module"></script>
+  </body>
 </html>
