@@ -10,20 +10,20 @@ var C=Object.defineProperty;var k=(r,e,t)=>e in r?C(r,e,{enumerable:!0,configura
             ${e.rating.toFixed(1)}
             </div>
                 <svg width="16" height="16">
-                  <use xlink:href="../assets/img/sprite.svg#rating-star-orange"></use>
+                  <use xlink:href="./assets/img/sprite.svg#rating-star-orange"></use>
                 </svg>
             
           </div>
           <button data-exercise-id='${e._id}' name='exercise-start' class="exer-card__start-btn">
             Start
             <svg width="16" height="16">
-              <use xlink:href="../assets/img/sprite.svg#arrow-right"></use>
+              <use xlink:href="./assets/img/sprite.svg#arrow-right"></use>
             </svg>
           </button>
         </div>
         <div class="exer-card__name">
           <svg width="24" height="24" class="exer-card__name__icon">
-            <use xlink:href="../assets/img/sprite.svg#icon-running-man-black-bg"></use>
+            <use xlink:href="./assets/img/sprite.svg#icon-running-man-black-bg"></use>
           </svg>
           <p class="exer-card__name__text">${e.name}</p>
         </div>
