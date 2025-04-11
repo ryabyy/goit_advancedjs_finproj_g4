@@ -1,4 +1,4 @@
-export class ExerciseCardPH {
+export class CardPH {
   #listContainer;
 
   constructor(listId) {
