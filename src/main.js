@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { ApiService, StorageService, ApiError } from './js/services';
 import { InitializeExercisesSection } from './js/exercises';
-
+import './js/favorites.js';
 import './js/tags.js';
 
 ///////////////////// API + Local Usage examples: /////////////////////
