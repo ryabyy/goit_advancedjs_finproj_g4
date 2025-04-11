@@ -1,7 +1,7 @@
 <header class="header">
-  <div class="container container-header">
+  <div class="header__container container">
     <nav class="nav">
-      <a href="../index.html" class="nav-logo">
+      <a href="../index.html" class="nav__logo">
         <img
           src="../assets/img/your-energy-logo.svg"
           alt="Logo"
@@ -10,36 +10,38 @@
         />
       </a>
 
-      <div class="categories-list">
-        <div class="container-categories">
-          <div class="switcer"></div>
-          <div class="categories-item active">
-            <a class="categories-link" href="../index.html">home</a>
+      <div class="categories">
+        <div class="categories-container">
+          <div class="switcher"></div>
+          
+          <div class="category category--active">
+            <a class="category__link" href="../index.html">home</a>
           </div>
-          <div class="categories-item">
-            <a class="categories-link" href="./favorites.html">favorites</a>
+
+          <div class="category">
+            <a class="category__link" href="./favorites.html">favorites</a>
           </div>
         </div>
       </div>
 
-      <ul class="list_networks">
-        <li class="item_networks">
-          <a href="" class="link_network">
-            <svg class="icon icon-network" width="28" height="28">
+      <ul class="nav__networks">
+        <li class="nav__network-item">
+          <a href="" class="nav__network-link">
+            <svg class="nav__icon" width="28" height="28">
               <use href="../assets/img/sprite.svg#facebook-gray"></use>
             </svg>
           </a>
         </li>
-        <li class="item_networks">
-          <a href="" class="link_network">
-            <svg class="icon icon-network" width="28" height="28">
+        <li class="nav__network-item">
+          <a href="" class="nav__network-link">
+            <svg class="nav__icon" width="28" height="28">
               <use href="../assets/img/sprite.svg#instagram-gray"></use>
             </svg>
           </a>
         </li>
-        <li class="item_networks">
-          <a href="" class="link_network">
-            <svg class="icon icon-network" width="28" height="28">
+        <li class="nav__network-item">
+          <a href="" class="nav__network-link">
+            <svg class="nav__icon" width="28" height="28">
               <use href="../assets/img/sprite.svg#youtube-gray"></use>
             </svg>
           </a>
@@ -47,5 +49,6 @@
       </ul>
     </nav>
   </div>
+
   <script type="module" src="../js/header.js"></script>
 </header>

@@ -1,33 +1,36 @@
-const container = document.querySelector('.container-categories');
-const switcher = container.querySelector('.switcer');
-const items = container.querySelectorAll('.categories-item');
+const Container = document.querySelector('.categories-container');
+const Items = Container.querySelectorAll('.category');
+const ActiveItem = Container.querySelector('.category--active');
+const Switcher = Container.querySelector('.switcher');
 
 function moveSwitcherTo(item) {
-  switcher.style.width = `${item.offsetWidth}px`;
-  switcher.style.left = `${item.offsetLeft}px`;
+  Switcher.style.width = `${item.offsetWidth}px`;
+  Switcher.style.left = `${item.offsetLeft}px`;
 }
 
-const activeItem = container.querySelector('.categories-item.active');
-if (activeItem) {
-  moveSwitcherTo(activeItem);
-}
+function isActiveItems(elements, activeElem, container) {
+  if (activeElem) {
+    moveSwitcherTo(activeElem);
+  }
+  
+  elements.forEach(element => {
+    const link = element.querySelector('.category__link');
+    
+    link.addEventListener('click', event => {
+      event.preventDefault();
 
-items.forEach(item => {
-  const link = item.querySelector('.categories-link');
+      container.querySelector('.category--active')?.classList.remove('category--active');
 
-  link.addEventListener('click', e => {
-    e.preventDefault();
-
-    container
-      .querySelector('.categories-item.active')
-      ?.classList.remove('active');
-    item.classList.add('active');
-
-    moveSwitcherTo(item);
-
-    const href = link.getAttribute('href');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 300);
+      element.classList.add('category--active');
+      
+      moveSwitcherTo(element);
+      
+      const href = link.getAttribute('href');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 300);
+    });
   });
-});
+}
+
+isActiveItems(Items, ActiveItem, Container);
