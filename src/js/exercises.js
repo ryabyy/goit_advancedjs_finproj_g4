@@ -106,8 +106,8 @@ function displayNoItemsText(length) {
 function addFilterTypeEvents() {
   document.querySelectorAll('a[name="filter-type"]').forEach(btn => {
     btn.addEventListener('click', async function (e) {
-    e.preventDefault();
-    if (currentFilterType != this.dataset.filterType || currentFilter) {
+      e.preventDefault();
+      if (currentFilterType != this.dataset.filterType || currentFilter) {
         currentFilterType = this.dataset.filterType;
         currentPage = 1;
         currentFilter = null;
@@ -127,8 +127,8 @@ function addFilterTypeEvents() {
 function addFilterEvents() {
   document.querySelectorAll('li[name="filter-item"]').forEach(btn => {
     btn.addEventListener('click', async function (e) {
-    e.preventDefault();
-    currentFilter = this.dataset.filter;
+      e.preventDefault();
+      currentFilter = this.dataset.filter;
       currentPage = 1;
       document.getElementById('exercises-title').innerHTML +=
         Templates.exercisesTitleFilter(currentFilter);
@@ -140,8 +140,8 @@ function addFilterEvents() {
 function addPageButtonEvents() {
   document.querySelectorAll('a[name="page-number-button"]').forEach(btn => {
     btn.addEventListener('click', function (e) {
-    e.preventDefault();
-    currentPage = this.dataset.pageNumber;
+      e.preventDefault();
+      currentPage = this.dataset.pageNumber;
       if (currentFilter) {
         drawExercises();
       } else {
@@ -160,16 +160,14 @@ function addSearchEvents() {
 }
 
 function addStartExerciseEvents() {
-  document
-    .getElementById('exercise-start')
-    .addEventListener('click', async function (e) {
+  document.querySelectorAll("[name='exercise-start']").forEach(btn => {
+    btn.addEventListener('click', async function (e) {
       e.preventDefault();
       const exercise = await ApiService.fetchExerciseByID(
-        this.dataset.exerciseId
+        btn.dataset.exerciseId
       );
-      debugger;
-      showExerciseDetails(exercise, false, function () {
-        alert('added to favorites');
-      });
+      const isFavorite = StorageService.loadFavorites().some(x => x._id == exercise._id);
+      showExerciseDetails(exercise, isFavorite);
     });
+  });
 }
