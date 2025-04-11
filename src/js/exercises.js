@@ -1,4 +1,4 @@
-import { ApiService } from './services.js';
+import { ApiService, StorageService } from './services.js';
 import { Templates } from './templates.js';
 
 const FilterTypes = Object.freeze({
@@ -17,6 +17,13 @@ export async function InitializeExercisesSection() {
   drawFilterTypes();
   addSearchEvents();
   await drawExerciseFilters(currentFilterType);
+  await drawDailyQuote();
+}
+
+async function drawDailyQuote() {
+  const quote = await StorageService.loadDailyQuote();
+  document.getElementById('quote-author').innerText = quote.author;
+  document.getElementById('quote-body').innerText = quote.quote;
 }
 
 async function drawFilterTypes() {
@@ -43,14 +50,12 @@ async function drawExerciseFilters() {
   }
   document.getElementById('exercises').style.display = 'none';
   document.getElementById('filters').style.display = 'flex';
-  document.getElementById('search').style.display = 'none';
+  document.getElementById('label-search').style.display = 'none';
   document.getElementById('filters').innerHTML = html;
 
   drawPageButtons(filtersResponse.totalPages);
   addFilterEvents();
-
-  document.getElementById('noitems').style.display =
-  filtersResponse.results.length == 0 ? 'block' : 'none';
+  displayNoItemsText(filtersResponse.results.length);
 }
 
 function drawPageButtons(totalPages) {
@@ -81,14 +86,19 @@ async function drawExercises() {
     html += Templates.exerciseHtml(exercise);
   }
   document.getElementById('filters').style.display = 'none';
-  document.getElementById('search').style.display = 'block';
+  document.getElementById('label-search').style.display = 'block';
   document.getElementById('exercises').style.display = 'flex';
   document.getElementById('exercises').innerHTML = html;
 
   drawPageButtons(exercisesResponse.totalPages);
+  displayNoItemsText(exercisesResponse.results.length);
+}
 
+function displayNoItemsText(length) {
   document.getElementById('noitems').style.display =
-    exercisesResponse.results.length == 0 ? 'block' : 'none';
+    length == 0 ? 'block' : 'none';
+  document.querySelector('.exercises-layout').style.flexDirection =
+    length == 0 ? 'row' : 'column';
 }
 
 function addFilterTypeEvents() {
@@ -98,10 +108,13 @@ function addFilterTypeEvents() {
         currentFilterType = this.dataset.filterType;
         currentPage = 1;
         currentFilter = null;
+        currentKeyword = '';
+        document.getElementById('search').value = '';
         document.querySelectorAll('.exercises-filter-type').forEach(el => {
           el.classList.remove('active');
         });
         this.classList.add('active');
+        document.getElementById('exercises-title').innerHTML = 'Exercises';
         await drawExerciseFilters();
       }
     });
@@ -113,6 +126,8 @@ function addFilterEvents() {
     btn.addEventListener('click', async function () {
       currentFilter = this.dataset.filter;
       currentPage = 1;
+      document.getElementById('exercises-title').innerHTML +=
+        Templates.exercisesTitleFilter(currentFilter);
       await drawExercises();
     });
   });
@@ -130,6 +145,7 @@ function addPageButtonEvents() {
     });
   });
 }
+
 function addSearchEvents() {
   document.getElementById('search').addEventListener('keyup', function () {
     currentKeyword = this.value.trim();
