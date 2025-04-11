@@ -3,6 +3,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { ApiService, StorageService, ApiError } from './js/services';
 import { InitializeExercisesSection } from './js/exercises';
 
+import './js/tags.js';
+
 ///////////////////// API + Local Usage examples: /////////////////////
 
 // // StorageService.clearDailyQuote();
