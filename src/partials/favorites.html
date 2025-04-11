@@ -1,37 +1,45 @@
-<section class="section favorites">
-  <load src="/partials/quote.html" />
-  <div class="favorites__hint">
-    <svg width="20" height="20">
-      <use href="./assets/img/sprite.svg#dumble-black"></use>
-    </svg>
-    <div class="hint-content">
-      <h4 class="hint-content__title">110 min</h4>
-      <p class="hint-content__text">Daily norm of sports</p>
-    </div>
-  </div>
-  <div class="favorites__img">
-    <picture>
-      <source
-        srcset="
+<div class="exercises-headline-holder">
+  <h2 id="exercises-title" class="exercises-title">Favorites</h2>
+</div>
+<div class="favorites">
+  <div class="favorites__info-panel">
+    <load src="/partials/quote.html" />
+    <div class="info-panel__hint">
+      <div class="hint-container">
+        <svg width="20" height="20">
+          <use href="./assets/img/sprite.svg#dumble-black"></use>
+        </svg>
+        <div class="hint-content">
+          <h4 class="hint-content__title">110 min</h4>
+          <p class="hint-content__text">Daily norm of sports</p>
+        </div>
+      </div>
+      <div class="favorites-img">
+        <picture>
+          <source
+            srcset="
           ./assets/img/favorites/women.webp    1x,
           ./assets/img/favorites/women@2x.webp 2x
         "
-        type="image/webp"
-      />
-      <source
-        srcset="
+            type="image/webp"
+          />
+          <source
+            srcset="
           ./assets/img/favorites/women.png    1x,
           ./assets/img/favorites/women@2x.png 2x
         "
-      />
-      <img
-        loading="lazy"
-        src="./assets/img/favorites/women.png"
-        alt="Emoji character"
-      />
-    </picture>
+          />
+          <img
+            loading="lazy"
+            src="./assets/img/favorites/women.png"
+            alt="Making sports"
+          />
+        </picture>
+      </div>
+    </div>
   </div>
+
   <div class="favorites__list">
     <ul class="exer-list" id="favorites-list" data-mode="favorites"></ul>
   </div>
-</section>
+</div>
