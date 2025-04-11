@@ -66,11 +66,32 @@
   line-height: 1.33333;
 }
 
+.modal_exercise_rating_layout {
+  display: flex;
+  gap: 2px;
+}
+
 .modal_exercise_rating {
   font-weight: 400;
   font-size: var(--exercise-card-rating-font-size);
   line-height: 1.5;
   color: var(--light-color);
+
+  text-align: center;
+}
+
+.rating-icon-wrapper {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-icon {
+  width: 14px;
+  height: 13px;
 }
 
 .model_exercise_info_layout {
@@ -163,6 +184,16 @@
 
   .modal_exercise_title {
     font-size: var(--exercise-card-header-font-size);
+  }
+
+  .rating-icon-wrapper {
+    width: 24px;
+    height: 24px;
+  }
+
+  .rating-icon {
+    width: 20px;
+    height: 19px;
   }
 
   .model_exercise_info_layout {

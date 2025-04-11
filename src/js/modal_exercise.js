@@ -10,14 +10,6 @@ export function showExerciseDetails(exercise, isFavorite, callback) {
     'Burned Calories': `${exercise.burnedCalories} / ${exercise.time} min`,
   };
 
-  // FIXME remove not neded
-  // <svg class="modal-close-button-icon" width="24" height="24">
-  //   <use href="./img/sprite.svg#icon-close"></use>
-  // </svg>
-
-  // <svg class="modal-close-button-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-  //                <path d="M11 1L1 11M1 1L11 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-  //            </svg>
   const instance = basicLightbox.create(
     `
         <div class="modal_container">
@@ -35,6 +27,7 @@ export function showExerciseDetails(exercise, isFavorite, callback) {
 
               <div class="modal_exercise_rating_layout">
                   <p class="modal_exercise_rating">${exercise.rating.toString()}</p>
+                  ${createRatingStarsMarkup(exercise.rating)}
               </div>
 
               <div class="model_exercise_info_layout">
@@ -68,6 +61,25 @@ export function showExerciseDetails(exercise, isFavorite, callback) {
     favButton.innerHTML = createFavButtonInnerMarkup(isFavorite);
     callback.onFavoritesClick(isFavorite);
   });
+}
+
+function createRatingStarsMarkup(rating) {
+  const markups = [];
+
+  for (let i = 1; i <= 5; i++) {
+    const iconName = i <= rating ? 'rating-star-orange' : 'rating-star-gray';
+    markups.push(
+      `
+        <div class="rating-icon-wrapper">
+          <svg class="rating-icon" width="14" height="13">
+            <use href="./img/sprite.svg#${iconName}" />
+          </svg>
+        </div>
+      `
+    );
+  }
+
+  return markups.join('');
 }
 
 function createInfoLayoutMarkup(infoItems) {
