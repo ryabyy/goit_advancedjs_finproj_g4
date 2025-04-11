@@ -1,7 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-export function showExerciseDetails(exercise, isFavorite, callback) {
+export function showExerciseDetails(exercise, isFavorite) {
   const infoItems = {
     Target: exercise.target,
     'Body part': exercise.bodyPart,
@@ -59,7 +59,7 @@ export function showExerciseDetails(exercise, isFavorite, callback) {
   favButton.addEventListener('click', event => {
     isFavorite = !isFavorite;
     favButton.innerHTML = createFavButtonInnerMarkup(isFavorite);
-    callback.onFavoritesClick(isFavorite);
+    // callback(isFavorite);
   });
 }
 

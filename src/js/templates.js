@@ -30,7 +30,7 @@ export class Templates {
                 </svg>
             
           </div>
-          <button data-exercise-id='${exercise._id}' id='exercise-start' class="exer-card__start-btn">
+          <button data-exercise-id='${exercise._id}' name='exercise-start' class="exer-card__start-btn">
             Start
             <svg width="16" height="16">
               <use xlink:href="../assets/img/sprite.svg#arrow-right"></use>
