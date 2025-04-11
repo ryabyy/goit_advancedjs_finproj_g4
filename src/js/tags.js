@@ -1,12 +1,14 @@
 const tagsList = document.querySelector('.js-hero__tags-list');
 const tags = ['Sport', 'Healthy', 'Workout', 'Diet'];
 
-function createTagsMarkup() {
-  return tags.map(tag =>
-    `<li class="hero__tags-item js-hero__tags-item">#${tag}</li>`,
-  )
-    .join('');
+function renderTags() {
+  tags.forEach(tag => {
+    const li = document.createElement('li');
+    li.classList.add('hero__tags-item', 'js-hero__tags-item');
+    li.innerText = `#${tag}`;
+    tagsList.append(li);
+  });
 }
 
 
-tagsList.innerHTML = createTagsMarkup();
+renderTags();
