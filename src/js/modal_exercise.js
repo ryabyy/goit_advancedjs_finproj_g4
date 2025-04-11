@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import { StorageService } from './services';
 
 export function showExerciseDetails(exercise, isFavorite) {
   const infoItems = {
@@ -57,9 +58,14 @@ export function showExerciseDetails(exercise, isFavorite) {
     '.modal-exercise-add-to-favorites-button'
   );
   favButton.addEventListener('click', event => {
+    debugger;
+    if (isFavorite) {
+      StorageService.removeExerciseFromFavorites(exercise._id);
+    } else {
+      StorageService.addExerciseToFavorites(exercise);
+    }
     isFavorite = !isFavorite;
     favButton.innerHTML = createFavButtonInnerMarkup(isFavorite);
-    // callback(isFavorite);
   });
 }
 

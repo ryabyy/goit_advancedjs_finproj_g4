@@ -278,6 +278,18 @@ export class StorageService {
     }
   }
 
+  static addExerciseToFavorites(exercise) {
+    let favorites = this.loadFavorites();
+    favorites.push(exercise);
+    this.storeFavorites(favorites);
+  }
+
+  static removeExerciseFromFavorites(id) {
+    let favorites = this.loadFavorites();
+    favorites = favorites.filter(f => f._id != id);
+    this.storeFavorites(favorites);
+  }
+
   static storeFavorites(favorites) {
     try {
       localStorage.setItem(

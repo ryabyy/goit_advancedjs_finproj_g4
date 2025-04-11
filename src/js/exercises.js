@@ -166,7 +166,8 @@ function addStartExerciseEvents() {
       const exercise = await ApiService.fetchExerciseByID(
         btn.dataset.exerciseId
       );
-      showExerciseDetails(exercise, true);
+      const isFavorite = StorageService.loadFavorites().some(x => x._id == exercise._id);
+      showExerciseDetails(exercise, isFavorite);
     });
   });
 }
