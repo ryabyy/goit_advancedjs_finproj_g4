@@ -1,7 +1,6 @@
-import { Card } from './card.js';
 import { CardPH } from './card-ph.js';
-import { ExerciseCard } from './exercise-card.js';
 import { FavoritesCard } from './favorites-card.js';
+import { StorageService } from './services.js';
 
 // Mock data
 const LIST = [
@@ -111,12 +110,20 @@ const LIST = [
   }
 ];
 
-// TODO: placeholder test
+// TODO: StorageService testing
 const exerCard = new FavoritesCard('favorites-list');
 const placeholder = new CardPH('favorites-list');
 
-placeholder.addCardHolder(LIST.length);
-setTimeout(() => {
-  placeholder.removeCardHolder();
-  exerCard.updateList(LIST);
-}, 3000);
+// StorageService.storeFavorites(LIST);
+
+const favBtn = document.querySelector('#favorites-page-button');
+favBtn.addEventListener('click', (e) => {
+  // const favList = StorageService.loadFavorites();
+  const favList = [];
+  // exerCard.updateList(favList);
+  if (favList.length === 0) {
+    placeholder.addCardHolder(favList.length);
+    return;
+  }
+  exerCard.updateList(favList);
+});

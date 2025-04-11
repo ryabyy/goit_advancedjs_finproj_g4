@@ -1,4 +1,6 @@
 export class CardPH {
+  #EMPTY_MSG = "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future."
+
   #listContainer;
 
   constructor(listId) {
@@ -6,6 +8,12 @@ export class CardPH {
   }
 
   addCardHolder(itemsNum) {
+    if (itemsNum === 0) {
+      const emptyListMsg = document.createElement('p');
+      emptyListMsg.innerText = this.#EMPTY_MSG;
+      this.#listContainer.append(emptyListMsg);
+    }
+
     [...Array(itemsNum).keys()].forEach((item) => {
       this.#listContainer.append(this.#getCardHolder());
     });
