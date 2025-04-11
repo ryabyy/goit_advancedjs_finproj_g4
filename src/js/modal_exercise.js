@@ -12,31 +12,31 @@ export function showExerciseDetails(exercise, isFavorite, callback) {
 
   const instance = basicLightbox.create(
     `
-        <div class="modal_container">
+        <div class="modal-container">
             <button class="modal-close-button" type="button">
               <svg class="modal-close-button-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                  <path d="M11 1L1 11M1 1L11 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
              </svg>
             </button>
-            <img class="modal_exercise_image" src="${
+            <img class="modal-exercise-image" src="${
               exercise.gifUrl
             }" width="295" height="258">
 
-            <div class="modal_exercise_details_layout">
-              <p class="modal_exercise_title">${exercise.name}</p>
+            <div class="modal-exercise-details-layout">
+              <p class="modal-exercise-title">${exercise.name}</p>
 
-              <div class="modal_exercise_rating_layout">
-                  <p class="modal_exercise_rating">${exercise.rating.toString()}</p>
+              <div class="modal-exercise-rating-layout">
+                  <p class="modal-exercise-rating">${exercise.rating.toString()}</p>
                   ${createRatingStarsMarkup(exercise.rating)}
               </div>
 
-              <div class="model_exercise_info_layout">
+              <div class="model-exercise-info-layout">
                   ${createInfoLayoutMarkup(infoItems)}
               </div>
 
-              <p class="modal_exercise_description">${exercise.description}</p>
+              <p class="modal-exercise-description">${exercise.description}</p>
 
-              <button class="modal_exercise_add_to_favorites_button">
+              <button class="modal-exercise-add-to-favorites-button">
                 ${createFavButtonInnerMarkup(isFavorite)}
               </button>
             </div>
@@ -54,7 +54,7 @@ export function showExerciseDetails(exercise, isFavorite, callback) {
 
   // setup favorites button
   const favButton = document.querySelector(
-    '.modal_exercise_add_to_favorites_button'
+    '.modal-exercise-add-to-favorites-button'
   );
   favButton.addEventListener('click', event => {
     isFavorite = !isFavorite;
@@ -90,7 +90,7 @@ function createInfoLayoutMarkup(infoItems) {
     const value = infoItems[name];
 
     markups.push(
-      `<div class="modal_exercise_info_item">
+      `<div class="modal-exercise-info-item">
             <p class="name">${name}</p>
             <p class="value">${value}</p>
       </div>`

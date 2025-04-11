@@ -1,7 +1,7 @@
-.modal_container {
+.modal-container {
   position: relative;
   display: flex;
-  max-width: 335px; /* fixme? */
+  max-width: 335px;
   min-width: 335px;
 
   flex-direction: column;
@@ -43,35 +43,35 @@
   stroke: currentColor;
 }
 
-.modal_exercise_image {
+.modal-exercise-image {
   border-radius: 12px;
   width: 295px;
   height: 258px;
 }
 
-.modal_exercise_details_layout {
+.modal-exercise-details-layout {
   display: flex;
   flex-direction: column;
 
   gap: 10px;
   margin-top: 20px;
 }
-.modal_exercise_details_layout p::first-letter {
+.modal-exercise-details-layout p::first-letter {
   text-transform: capitalize;
 }
 
-.modal_exercise_title {
+.modal-exercise-title {
   font-size: var(--exercise-card-header-font-size-mobile);
   font-weight: 500;
   line-height: 1.33333;
 }
 
-.modal_exercise_rating_layout {
+.modal-exercise-rating-layout {
   display: flex;
   gap: 2px;
 }
 
-.modal_exercise_rating {
+.modal-exercise-rating {
   font-weight: 400;
   font-size: var(--exercise-card-rating-font-size);
   line-height: 1.5;
@@ -94,7 +94,7 @@
   height: 13px;
 }
 
-.model_exercise_info_layout {
+.model-exercise-info-layout {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -102,8 +102,8 @@
   margin-top: 20px;
 }
 
-.model_exercise_info_layout::before,
-.model_exercise_info_layout::after {
+.model-exercise-info-layout::before,
+.model-exercise-info-layout::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -111,29 +111,29 @@
   background-color: rgba(244, 244, 244, 0.2);
 }
 
-.model_exercise_info_layout::before {
+.model-exercise-info-layout::before {
   top: -10px;
 }
 
-.model_exercise_info_layout::after {
+.model-exercise-info-layout::after {
   bottom: -10px;
 }
 
-.modal_exercise_info_item .name {
+.modal-exercise-info-item .name {
   font-weight: 400;
   font-size: var(--exercise-card-info-font-size);
   line-height: 1.5;
   color: rgba(244, 244, 244, 0.4);
 }
 
-.modal_exercise_info_item .value {
+.modal-exercise-info-item .value {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
   color: var(--light-color);
 }
 
-.modal_exercise_description {
+.modal-exercise-description {
   margin-top: 20px;
   font-weight: 400;
   font-size: 14px;
@@ -141,7 +141,7 @@
   color: rgba(244, 244, 244, 0.6);
 }
 
-.modal_exercise_add_to_favorites_button {
+.modal-exercise-add-to-favorites-button {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -160,8 +160,8 @@
   color: var(--black-color);
 }
 
-.modal_exercise_add_to_favorites_button:hover,
-.modal_exercise_add_to_favorites_button:focus {
+.modal-exercise-add-to-favorites-button:hover,
+.modal-exercise-add-to-favorites-button:focus {
   border: 1px solid var(--light-color);
   background: transparent;
   color: var(--light-color);
@@ -174,7 +174,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .modal_container {
+  .modal-container {
     display: flex;
     flex-direction: row;
 
@@ -182,7 +182,7 @@
     padding: 32px;
   }
 
-  .modal_exercise_title {
+  .modal-exercise-title {
     font-size: var(--exercise-card-header-font-size);
   }
 
@@ -196,22 +196,22 @@
     height: 19px;
   }
 
-  .model_exercise_info_layout {
+  .model-exercise-info-layout {
     margin-top: 16px;
   }
 
-  .modal_exercise_details_layout {
+  .modal-exercise-details-layout {
     max-width: 342px;
     margin-top: 0px;
     margin-left: 32px;
     gap: 8px;
   }
 
-  .modal_exercise_description {
+  .modal-exercise-description {
     margin-top: 16px;
   }
 
-  .modal_exercise_add_to_favorites_button {
+  .modal-exercise-add-to-favorites-button {
     margin-top: 56px;
     border-radius: 30px;
     padding: 12px 24px;
