@@ -1,5 +1,6 @@
 import { ApiService, StorageService } from './services.js';
 import { Templates } from './templates.js';
+import { showExerciseDetails } from './modal_exercise.js';
 
 const FilterTypes = Object.freeze({
   MUSCLES: 'Muscles',
@@ -90,6 +91,7 @@ async function drawExercises() {
   document.getElementById('exercises').style.display = 'flex';
   document.getElementById('exercises').innerHTML = html;
 
+  addStartExerciseEvents();
   drawPageButtons(exercisesResponse.totalPages);
   displayNoItemsText(exercisesResponse.results.length);
 }
@@ -103,8 +105,9 @@ function displayNoItemsText(length) {
 
 function addFilterTypeEvents() {
   document.querySelectorAll('a[name="filter-type"]').forEach(btn => {
-    btn.addEventListener('click', async function () {
-      if (currentFilterType != this.dataset.filterType || currentFilter) {
+    btn.addEventListener('click', async function (e) {
+    e.preventDefault();
+    if (currentFilterType != this.dataset.filterType || currentFilter) {
         currentFilterType = this.dataset.filterType;
         currentPage = 1;
         currentFilter = null;
@@ -123,8 +126,9 @@ function addFilterTypeEvents() {
 
 function addFilterEvents() {
   document.querySelectorAll('li[name="filter-item"]').forEach(btn => {
-    btn.addEventListener('click', async function () {
-      currentFilter = this.dataset.filter;
+    btn.addEventListener('click', async function (e) {
+    e.preventDefault();
+    currentFilter = this.dataset.filter;
       currentPage = 1;
       document.getElementById('exercises-title').innerHTML +=
         Templates.exercisesTitleFilter(currentFilter);
@@ -135,8 +139,9 @@ function addFilterEvents() {
 
 function addPageButtonEvents() {
   document.querySelectorAll('a[name="page-number-button"]').forEach(btn => {
-    btn.addEventListener('click', function () {
-      currentPage = this.dataset.pageNumber;
+    btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    currentPage = this.dataset.pageNumber;
       if (currentFilter) {
         drawExercises();
       } else {
@@ -147,8 +152,24 @@ function addPageButtonEvents() {
 }
 
 function addSearchEvents() {
-  document.getElementById('search').addEventListener('keyup', function () {
+  document.getElementById('search').addEventListener('keyup', function (e) {
+    e.preventDefault();
     currentKeyword = this.value.trim();
     drawExercises();
   });
+}
+
+function addStartExerciseEvents() {
+  document
+    .getElementById('exercise-start')
+    .addEventListener('click', async function (e) {
+      e.preventDefault();
+      const exercise = await ApiService.fetchExerciseByID(
+        this.dataset.exerciseId
+      );
+      debugger;
+      showExerciseDetails(exercise, false, function () {
+        alert('added to favorites');
+      });
+    });
 }
