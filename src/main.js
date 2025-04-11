@@ -1,6 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { ApiService, StorageService, ApiError } from './js/services';
+import { InitializeExercisesSection } from './js/exercises';
 
 import './js/tags.js';
 
@@ -53,3 +54,7 @@ import './js/tags.js';
 // }
 
 ///////////////////// End of API + Local examples: /////////////////////
+
+document.addEventListener('DOMContentLoaded', function () {
+  InitializeExercisesSection();
+});
