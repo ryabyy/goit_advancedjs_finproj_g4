@@ -1,5 +1,5 @@
-import { updateList } from './exer-card.js';
-import { addCardHolder, removeCardHolder } from './exer-card-ph.js';
+import { ExerciseCard } from './exer-card.js';
+import { ExerciseCardPH } from './exer-card-ph.js';
 
 // Mock data
 const LIST = [
@@ -84,8 +84,11 @@ const LIST = [
 ];
 
 // TODO: placeholder test
-addCardHolder(6);
+const exerCard = new ExerciseCard('favorites-list');
+const placeholder = new ExerciseCardPH('favorites-list');
+
+placeholder.addCardHolder(LIST.length);
 setTimeout(() => {
-  removeCardHolder();
-  updateList(LIST);
+  placeholder.removeCardHolder();
+  exerCard.updateList(LIST);
 }, 5000);
