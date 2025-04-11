@@ -17,13 +17,14 @@
       icon-path="./assets/img/sprite.svg#logo"
       src="./partials/header.html"
     />
-
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/hero.html" />
-    </main>
-    <main>
-      <load src="./partials/exercises.html" />
+      <section id="home-page">
+        <load src="./partials/hero.html" />
+        <load src="./partials/exercises.html" />
+      </section>
+      <section id="favorites-page" style="display: none">
+        <load src="./partials/favorites.html" />
+      </section>
     </main>
 
     <load src="./partials/footer.html" />
