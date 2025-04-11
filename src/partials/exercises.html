@@ -1,0 +1,60 @@
+<section class="exercises-section">
+  <div class="exercises-topbar">
+    <div class="exercises-headline-holder">
+      <h2 id="exercises-title" class="exercises-title">Exercises</h2>
+    </div>
+    <div class="exercises-topbar-right">
+      <label class="exercises-search-holder" id="label-search">
+        <input
+          class="exercises-search"
+          placeholder="Search"
+          type="text"
+          id="search"
+        />
+        <svg class="exercises-search-button" width="20" height="20">
+          <use href="./assets/img/sprite.svg#search"></use>
+        </svg>
+      </label>
+      <ul class="exercises-filter-types" id="filter-types"></ul>
+    </div>
+  </div>
+  <div class="exercises-content">
+    <div class="exercises-sidebar">
+      <load src="/partials/quote.html" />
+      <img
+        class="exercises-banner"
+        src="./assets/img/home/women-with-water.webp"
+        srcset="./assets/img/home/women-with-water@2x.webp 2x"
+        alt="Woman with water"
+        width="auto"
+        height="auto"
+      />
+      <div class="favorites__hint">
+        <svg width="20" height="20">
+          <use href="./assets/img/sprite.svg#dumble-black"></use>
+        </svg>
+        <div class="hint-content">
+          <h4 class="hint-content__title">110 min</h4>
+          <p class="hint-content__text">
+            The World Health Organization recommends at least 150 minutes of
+            moderate-intensity aerobic physical activity throughout the week for
+            adults aged 18-64. However, what happens if we adjust that number to
+            110 minutes every day? While it might seem like a high number to
+            hit, dedicating 110 minutes daily to sporting activities may offer
+            unparalleled benefits to physical health, mental well-being, and
+            overall quality of life.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercises-layout">
+      <ul id="filters" class="exercises-filters-grid"></ul>
+      <ul id="exercises" class="exercises-grid" style="display: none"></ul>
+      <ul id="pages" class="exercises-page-buttons"></ul>
+      <div id="noitems" class="exercises-noitems">
+        There are no items matching your search criteria.
+      </div>
+    </div>
+  </div>
+</section>
