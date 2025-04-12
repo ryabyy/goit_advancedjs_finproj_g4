@@ -4,6 +4,7 @@ import { ApiService, StorageService, ApiError } from './js/services';
 import { InitializeExercisesSection } from './js/exercises';
 import './js/favorites.js';
 import './js/tags.js';
+import './js/subscribe-form.js';
 
 ///////////////////// API + Local Usage examples: /////////////////////
 
