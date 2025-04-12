@@ -249,6 +249,11 @@
   height: 40px;
   font-size: 24px;
   color: #242424;
+  cursor: pointer;
+}
+
+.active {
+  opacity: 1;
 }
 
 .disabled {
@@ -262,6 +267,11 @@
   font-weight: 500;
   line-height: 1;
   opacity: 1;
+}
+
+.noclick {
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .exercises-noitems {

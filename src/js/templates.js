@@ -64,4 +64,17 @@ export class Templates {
       ? `<li><span class="exercises-page-button disabled">${pageNumber}</span></li>`
       : `<li><a href='#' class='exercises-page-button' name='page-number-button' data-page-number='${pageNumber}'>${pageNumber}</a></li>`;
   }
+
+  static pageNumberDots() {
+    return `<li><span class="exercises-page-button noclick">...</span></li>`;
+  }
+
+  static pageNavigationButton(pageNumber, type, state) {
+    return `  
+        <svg name='page-number-button' data-page-number='${pageNumber}' class='exercises-page-button ${state}' width="40" height="40">
+          <use href="./sprite.svg#page-pagination-arrow-${type}-${state}"></use>
+        </svg>
+        `;
+  }
+
 }
