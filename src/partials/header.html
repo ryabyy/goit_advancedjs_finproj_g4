@@ -48,6 +48,46 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Контейнер для бургер-меню -->
+    <div class="burger-menu-container">
+      <button class="burger-menu" id="burger-menu">
+        <span class="burger-menu__line"></span>
+        <span class="burger-menu__line"></span>
+        <span class="burger-menu__line"></span>
+      </button>
+
+      <div class="side-menu" id="side-menu">
+        <button class="side-menu__close" id="side-menu-close">&times;</button>
+        <ul class="side-menu__list">
+          <li><a href="#" class="side-menu__link">Home</a></li>
+          <li><a href="#" class="side-menu__link">Favorites</a></li>
+        </ul>
+        <ul class="side-menu__networks">
+          <li>
+            <a href="#" class="side-menu__network-link">
+              <svg class="nav__icon" width="28" height="28">
+                <use href="./assets/img/sprite.svg#facebook-gray"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="side-menu__network-link">
+              <svg class="nav__icon" width="28" height="28">
+                <use href="./assets/img/sprite.svg#instagram-gray"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="side-menu__network-link">
+              <svg class="nav__icon" width="28" height="28">
+                <use href="./assets/img/sprite.svg#youtube-gray"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <script type="module" src="./js/header.js"></script>

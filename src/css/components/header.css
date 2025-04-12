@@ -73,3 +73,64 @@
 .nav__network-item:hover {
   scale: 1.1;
 }
+
+.burger-menu-container {
+  position: relative;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger-menu__line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--black-color);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.side-menu__close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.side-menu__list,
+.side-menu__networks {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.side-menu__link {
+  text-decoration: none;
+  color: var(--black-color);
+  margin-bottom: 10px;
+}
+
+.side-menu__network-link {
+  display: inline-block;
+  margin-right: 10px;
+}
