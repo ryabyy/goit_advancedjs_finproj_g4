@@ -48,7 +48,66 @@
         </li>
       </ul>
     </nav>
+
+    <div class="burger-menu-container">
+      <button class="burger-menu" id="burger-menu">
+        <svg class="burger-menu__icon" width="32" height="32">
+          <use href="./assets/img/sprite.svg#icon-burger"></use>
+        </svg>
+      </button>
+
+      <div class="side-menu" id="side-menu">
+        <button class="side-menu__close" id="side-menu-close">
+          <svg class="menu-btn-icon" width="32" height="32">
+            <use href="./assets/img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="button-container">
+          <button class="button">Home</button>
+          <button class="button">Favorites</button>
+        </div>
+        <ul class="side-menu__networks">
+          <li>
+            <a
+              href="https://www.facebook.com/goITclub/"
+              class="side-menu__network-link"
+              aria-label="Go to our Facebook page"
+              target="_blank"
+            >
+              <svg class="nav__icon" width="28" height="28">
+                <use href="./assets/img/sprite.svg#facebook-white"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/goitclub/"
+              class="side-menu__network-link"
+              aria-label="Go to our Instagram page"
+              target="_blank"
+            >
+              <svg class="nav__icon" width="28" height="28">
+                <use href="./assets/img/sprite.svg#instagram-white"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              class="side-menu__network-link"
+              aria-label="Go to our Youtube page"
+              target="_blank"
+            >
+              <svg class="nav__icon" width="28" height="28">
+                <use href="./assets/img/sprite.svg#youtube-white"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
+  <script type="module" src="./js/side-menu.js"></script>
   <script type="module" src="./js/header.js"></script>
 </header>
