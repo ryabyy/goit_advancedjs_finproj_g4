@@ -212,18 +212,28 @@ function debounce(func, delay) {
   };
 }
 
+let lastKeyword = '';
+
 function addSearchEvents() {
   const searchInput = document.getElementById('search');
 
   const debouncedSearch = debounce(function () {
-    currentKeyword = this.value.trim();
-    drawExercises();
+    const keyword = this.value.trim();
+    if (keyword !== lastKeyword) {
+      lastKeyword = keyword;
+      currentKeyword = keyword;
+      drawExercises();
+    }
   }, 1000);
 
   searchInput.addEventListener('keyup', function (e) {
+    const keyword = this.value.trim();
     if (e.key === 'Enter') {
-      currentKeyword = this.value.trim();
-      drawExercises();
+      if (keyword !== lastKeyword) {
+        lastKeyword = keyword;
+        currentKeyword = keyword;
+        drawExercises(); // fire immediately
+      }
     } else {
       debouncedSearch.call(this);
     }
