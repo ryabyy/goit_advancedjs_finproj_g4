@@ -58,10 +58,10 @@ export class ApiService {
   ) {
     try {
       const params = {
-        bodypart: bodypart,
-        muscles: muscles,
-        equipment: equipment,
-        keyword: keyword,
+        ...(bodypart && { bodypart }),
+        ...(muscles && { muscles }),
+        ...(equipment && { equipment }),
+        ...(keyword && { keyword }),
         page: page,
         limit: limit,
       };
