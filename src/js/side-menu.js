@@ -29,18 +29,28 @@ function closeSideMenu() {
   sideMenu.style.right = '-100%';
 }
 
-sideMenuHomeButton.addEventListener('click', () => {
-  switchSection('home-page-button');
-  closeSideMenu();
-  setTimeout(() => {
-    window.location.href = '#home-page-button';
-  }, 300);
-});
+function initializeSideMenuNavigation() {
+  sideMenuHomeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('home-page-button');
+    closeSideMenu();
+    setTimeout(() => {
+      document.getElementById('home-page').style.display = 'block';
+      document.getElementById('favorites-page').style.display = 'none';
+    }, 300);
+  });
 
-sideMenuFavoritesButton.addEventListener('click', () => {
-  switchSection('favorites-page-button');
-  closeSideMenu();
-  setTimeout(() => {
-    window.location.href = '#favorites-page-button';
-  }, 300);
+  sideMenuFavoritesButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('favorites-page-button');
+    closeSideMenu();
+    setTimeout(() => {
+      document.getElementById('home-page').style.display = 'none';
+      document.getElementById('favorites-page').style.display = 'block';
+    }, 300);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializeSideMenuNavigation();
 });
