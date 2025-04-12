@@ -1,27 +1,32 @@
 export class Quote {
-  LS_QUOTE_KEY = 'quote';
+  static PAGES = {
+    HOME: 'home',
+    FAVORITES: 'favorites'
+  }
 
+  #textId;
+  #authorId;
   #textElem;
   #authorElem;
 
-  constructor(textId, authorId) {
-    this.#initTextFields(textId, authorId);
+  constructor(page, parentClass) {
+    this.#initTextFields(page, parentClass);
   }
 
-  #initTextFields(textId, authorId) {
-    const textElem = document.querySelector('.quote-body__text');
-    const authorElem = document.querySelector('.quote-body__author');
-    textElem.id = textId;
-    authorElem.id = authorId;
+  #initTextFields(page, parentClass) {
+    const textElem = document.querySelector(`.${parentClass} .quote-body__text`);
+    const authorElem = document.querySelector(`.${parentClass} .quote-body__author`);
+    this.#textId = `${page}-quote-text`;
+    this.#authorId = `${page}-quote-author`;
+    textElem.id = this.#textId;
+    authorElem.id = this.#authorId;
 
-    this.#textElem = document.querySelector(`#${textId}`);
-    this.#authorElem = document.querySelector(`#${authorId}`);
+    this.#textElem = document.querySelector(`#${this.#textId}`);
+    this.#authorElem = document.querySelector(`#${this.#authorId}`);
   }
 
   updateQuote({ quote, author }) {
-    this.#textElem.style.innerText = quote;
-    this.#authorElem.style.innerText = author;
-    // In case the next quote will fail to fetch, we can use the previous one from localStorage
-    localStorage.setItem(this.LS_QUOTE_KEY, JSON.stringify({ quote, author }));
+    this.#textElem.innerText = quote;
+    this.#authorElem.innerText = author;
   }
 }

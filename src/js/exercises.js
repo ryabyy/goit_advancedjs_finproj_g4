@@ -1,6 +1,8 @@
 import { ApiService, StorageService } from './services.js';
 import { Templates } from './templates.js';
 import { showExerciseDetails } from './modal_exercise.js';
+import { Quote } from './quote.js';
+import { ExerciseCard } from './exercise-card.js';
 
 const FilterTypes = Object.freeze({
   MUSCLES: 'Muscles',
@@ -22,9 +24,9 @@ export async function InitializeExercisesSection() {
 }
 
 async function drawDailyQuote() {
-  const quote = await StorageService.loadDailyQuote();
-  document.getElementById('quote-author').innerText = quote.author;
-  document.getElementById('quote-body').innerText = quote.quote;
+  const quoteElem = new Quote(Quote.PAGES.HOME, 'exercises-sidebar');
+  const { quote, author } = await StorageService.loadDailyQuote();
+  quoteElem.updateQuote({ quote, author });
 }
 
 async function drawFilterTypes() {
@@ -69,6 +71,7 @@ function drawPageButtons(totalPages) {
 }
 
 async function drawExercises() {
+  const listElem = document.getElementById('exercises');
   const muscle = currentFilterType == FilterTypes.MUSCLES ? currentFilter : '';
   const bodypart =
     currentFilterType == FilterTypes.BODY_PARTS ? currentFilter : '';
@@ -82,16 +85,21 @@ async function drawExercises() {
     currentPage,
     exercisesLimit
   );
-  let html = '';
+
   for (let exercise of exercisesResponse.results) {
-    html += Templates.exerciseHtml(exercise);
+    const card = new ExerciseCard();
+    card.startBtn.addEventListener('pointerup', async function (e) {
+      const isFavorite = StorageService.loadFavorites().some(x => x._id === exercise.id);
+      showExerciseDetails(exercise, isFavorite);
+    });
+    card.updateCard(exercise);
+    listElem.append(card.card);
   }
+
   document.getElementById('filters').style.display = 'none';
   document.getElementById('label-search').style.display = 'block';
   document.getElementById('exercises').style.display = 'flex';
-  document.getElementById('exercises').innerHTML = html;
 
-  addStartExerciseEvents();
   drawPageButtons(exercisesResponse.totalPages);
   displayNoItemsText(exercisesResponse.results.length);
 }
@@ -156,18 +164,5 @@ function addSearchEvents() {
     e.preventDefault();
     currentKeyword = this.value.trim();
     drawExercises();
-  });
-}
-
-function addStartExerciseEvents() {
-  document.querySelectorAll("[name='exercise-start']").forEach(btn => {
-    btn.addEventListener('click', async function (e) {
-      e.preventDefault();
-      const exercise = await ApiService.fetchExerciseByID(
-        btn.dataset.exerciseId
-      );
-      const isFavorite = StorageService.loadFavorites().some(x => x._id == exercise._id);
-      showExerciseDetails(exercise, isFavorite);
-    });
   });
 }
