@@ -98,7 +98,7 @@ export class Card{
   getIcon(width, height, id) { // protected
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `../assets/img/sprite.svg#${id}`);
+    use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `./sprite.svg#${id}`);
     svg.setAttribute('width', width);
     svg.setAttribute('height', height);
     svg.append(use);
