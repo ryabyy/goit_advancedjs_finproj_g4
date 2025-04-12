@@ -26,22 +26,21 @@ export class Templates {
             ${exercise.rating.toFixed(1)}
             </div>
                 <svg width="16" height="16">
-                  <use href="./assets/img/sprite.svg#rating-star-orange"></use>
+                  <use href="./sprite.svg#rating-star-orange"></use>
                 </svg>
-            
           </div>
           <button data-exercise-id='${
             exercise._id
           }' name='exercise-start' class="exer-card__start-btn">
             Start
-            <svg width="16" height="16">
-              <use href="./assets/img/sprite.svg#arrow-right"></use>
+           <svg width="16" height="16">
+              <use href="./sprite.svg#arrow-right"></use>
             </svg>
           </button>
         </div>
         <div class="exer-card__name">
           <svg width="24" height="24" class="exer-card__name__icon">
-            <use href="./assets/img/sprite.svg#icon-running-man-black-bg"></use>
+            <use href="./sprite.svg#icon-running-man-black-bg"></use>
           </svg>
           <p class="exer-card__name__text">${exercise.name}</p>
         </div>

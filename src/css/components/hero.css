@@ -29,10 +29,6 @@
   letter-spacing: -0.02em;
 }
 
-.hero__highlight {
-  font-style: italic;
-}
-
 .hero__subtitle {
   font-size: 14px;
   line-height: 1.29;
@@ -62,7 +58,6 @@
   border: 1px solid #242424;
   border-radius: 30px;
 }
-
 
 @media screen and (min-width: 768px) {
   .container {
@@ -101,7 +96,6 @@
     font-size: 16px;
     line-height: 1.5;
   }
-
 }
 
 @media screen and (min-width: 1440px) {

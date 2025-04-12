@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { ApiService, StorageService, ApiError } from './js/services';
 import { InitializeExercisesSection } from './js/exercises';
-
+import './js/favorites.js';
 import './js/tags.js';
 
 ///////////////////// API + Local Usage examples: /////////////////////
@@ -68,15 +68,16 @@ function initializeTopNavigation() {
       document.getElementById('home-page').style.display = 'block';
       document.getElementById('favorites-page').style.display = 'none';
     });
-  document.getElementById('logo-button').addEventListener('click', function (e) {
+  document
+    .getElementById('logo-button')
+    .addEventListener('click', function (e) {
       e.preventDefault();
-    document.getElementById('home-page').style.display = 'block';
-    document.getElementById('favorites-page').style.display = 'none';
-  });
+      document.getElementById('home-page').style.display = 'block';
+      document.getElementById('favorites-page').style.display = 'none';
+    });
   document
     .getElementById('favorites-page-button')
     .addEventListener('click', function (e) {
-      debugger;
       e.preventDefault();
       document.getElementById('home-page').style.display = 'none';
       document.getElementById('favorites-page').style.display = 'block';
