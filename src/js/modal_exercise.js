@@ -77,7 +77,7 @@ function createRatingStarsMarkup(rating) {
       `
         <div class="rating-icon-wrapper">
           <svg class="rating-icon" width="14" height="13">
-            <use href="./assets/img/sprite.svg#${iconName}" />
+            <use href="./sprite.svg#${iconName}" />
           </svg>
         </div>
       `
