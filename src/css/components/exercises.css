@@ -117,7 +117,7 @@
   justify-content: space-between;
 }
 
-.exercises-sidebar .favorites__hint {
+.exercises-sidebar .hint-container {
   height: auto;
   min-width: 400px;
 }
@@ -278,7 +278,7 @@
     max-width: 288px;
   }
 
-  .exercises-sidebar .favorites__hint {
+  .exercises-sidebar .hint-container {
     width: 40%;
     min-height: 200px;
     margin-top: 0;
@@ -312,7 +312,7 @@
     justify-content: space-between;
     flex-direction: column;
   }
-  .exercises-sidebar .favorites__hint {
+  .exercises-sidebar .hint-container {
     width: 100%;
   }
 }
@@ -326,7 +326,7 @@
     min-width: auto;
     width: 100%;
   }
-  .exercises-sidebar .favorites__hint {
+  .exercises-sidebar .hint-container {
     width: 100%;
     min-width: auto;
   }
