@@ -1,129 +1,77 @@
-import { CardPH } from './card-ph.js';
 import { FavoritesCard } from './favorites-card.js';
-import { StorageService } from './services.js';
+import { ApiService, StorageService } from './services.js';
+import { showExerciseDetails } from './modal_exercise.js';
+import { Quote } from './quote.js';
 
-// Mock data
-const LIST = [
-  {
-    "_id": "64f389465ae26083f39b17a4",
-    "bodyPart": "waist",
-    "equipment": "body weight",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0003.gif",
-    "name": "air bike",
-    "target": "abs",
-    "description": "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.",
-    "rating": 3.6,
-    "burnedCalories": 312,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a5",
-    "bodyPart": "waist",
-    "equipment": "body weight",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0006.gif",
-    "name": "alternate heel touchers",
-    "target": "abs",
-    "description": "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.",
-    "rating": 5.1,
-    "burnedCalories": 116,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a6",
-    "bodyPart": "back",
-    "equipment": "cable",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0007.gif",
-    "name": "alternate lateral pulldown",
-    "target": "lats",
-    "description": "These large back muscles are responsible for shoulder adduction and horizontal extension. Pull-ups and lat pulldowns are common exercises targeting the lats.",
-    "rating": 3,
-    "burnedCalories": 70,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a4",
-    "bodyPart": "waist",
-    "equipment": "body weight",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0003.gif",
-    "name": "air bike",
-    "target": "abs",
-    "description": "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.",
-    "rating": 3,
-    "burnedCalories": 312,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a5",
-    "bodyPart": "waist",
-    "equipment": "body weight",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0006.gif",
-    "name": "alternate heel touchers",
-    "target": "abs",
-    "description": "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.",
-    "rating": 3,
-    "burnedCalories": 116,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a6",
-    "bodyPart": "back",
-    "equipment": "cable",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0007.gif",
-    "name": "alternate lateral pulldown",
-    "target": "lats",
-    "description": "These large back muscles are responsible for shoulder adduction and horizontal extension. Pull-ups and lat pulldowns are common exercises targeting the lats.",
-    "rating": 3,
-    "burnedCalories": 70,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a6",
-    "bodyPart": "back",
-    "equipment": "cable",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0007.gif",
-    "name": "alternate lateral pulldown",
-    "target": "lats",
-    "description": "These large back muscles are responsible for shoulder adduction and horizontal extension. Pull-ups and lat pulldowns are common exercises targeting the lats.",
-    "rating": 3,
-    "burnedCalories": 70,
-    "time": 3,
-    "popularity": 1
-  },
-  {
-    "_id": "64f389465ae26083f39b17a4",
-    "bodyPart": "waist",
-    "equipment": "body weight",
-    "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0003.gif",
-    "name": "air bike",
-    "target": "abs",
-    "description": "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.",
-    "rating": 3,
-    "burnedCalories": 312,
-    "time": 3,
-    "popularity": 1
-  }
-];
+const EMPTY_MSG = "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future."
 
-// TODO: StorageService testing
-const exerCard = new FavoritesCard('favorites-list');
-const placeholder = new CardPH('favorites-list');
+const quoteElem = new Quote(Quote.PAGES.FAVORITES, 'favorites__info-panel');
+const listContainer = document.querySelector('.favorites__list');
+const emptyListElem = document.createElement('div');
+const emptyListText = document.createElement('p');
+const listElem = document.createElement('ul');
+const favNavBtn = document.querySelector('#favorites-page-button');
 
-// StorageService.storeFavorites(LIST);
+emptyListElem.append(emptyListText);
+emptyListElem.classList.add('list__empty-msg');
+emptyListText.innerText = EMPTY_MSG;
+listElem.classList.add('exer-list');
 
-const favBtn = document.querySelector('#favorites-page-button');
-favBtn.addEventListener('click', (e) => {
-  // const favList = StorageService.loadFavorites();
-  const favList = [];
-  // exerCard.updateList(favList);
+favNavBtn.addEventListener('pointerup', async (e) => {
+  await updateQuote();
+  const favList = StorageService.loadFavorites();
   if (favList.length === 0) {
-    placeholder.addCardHolder(favList.length);
+    showEmptyMsg();
     return;
   }
-  exerCard.updateList(favList);
+  updateList(favList);
 });
+
+function updateList(listData) {
+  clearList();
+  listContainer.append(listElem);
+  listData.forEach(({ _id, name, burnedCalories, bodyPart, target }) => {
+    const card = addCard(_id);
+    card.updateCard({ name, burnedCalories, bodyPart, target });
+  });
+}
+
+function clearList() {
+  while (listElem.lastElementChild) {
+    listElem.removeChild(listElem.lastElementChild);
+  }
+  listElem.remove();
+  emptyListElem.remove();
+}
+
+async function updateQuote() {
+  const { quote, author } = await StorageService.loadDailyQuote();
+  quoteElem.updateQuote({ quote, author });
+}
+
+function addCard(id) {
+  const card = new FavoritesCard();
+  card.removeBtn.addEventListener('pointerup', () => {
+    removeCard(card.card, id);
+  });
+  card.startBtn.addEventListener('pointerup', async function (e) {
+    const exercise = await ApiService.fetchExerciseByID(id);
+    const isFavorite = StorageService.loadFavorites().some(x => x._id === exercise._id);
+    showExerciseDetails(exercise, isFavorite);
+  });
+  listElem.append(card.card);
+  return card;
+}
+
+function removeCard(card, id) {
+  StorageService.removeExerciseFromFavorites(id);
+  card.remove();
+  if (StorageService.loadFavorites().length === 0) {
+    showEmptyMsg();
+  }
+}
+
+function showEmptyMsg() {
+  listElem.remove();
+  listContainer.append(emptyListElem);
+}
