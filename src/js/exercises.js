@@ -9,12 +9,12 @@ const FilterTypes = Object.freeze({
   BODY_PARTS: 'Body parts',
   EQUIPMENT: 'Equipment',
 });
+const filtersLimit = 12;
+const exercisesLimit = 10;
 let currentPage = 1;
 let currentFilterType = FilterTypes.MUSCLES;
 let currentFilter;
 let currentKeyword;
-const filtersLimit = 12;
-const exercisesLimit = 10;
 
 export async function InitializeExercisesSection() {
   drawFilterTypes();
@@ -62,10 +62,53 @@ async function drawExerciseFilters() {
 }
 
 function drawPageButtons(totalPages) {
-  let html = '';
-  for (let i = 1; i <= totalPages; i++) {
-    html += Templates.pageNumberButtonHtml(i, i == currentPage);
+  if (totalPages == 1) {
+    document.getElementById('pages').innerText = '';
+    return;
   }
+  let html = '';
+  if (totalPages < 10) {
+    for (let i = 1; i <= totalPages; i++) {
+      html += Templates.pageNumberButtonHtml(i, i == currentPage);
+    }
+  } else {
+    let firstPageNumber = currentPage - 3 > 1 ? currentPage - 3 : 1;
+    const lastPageNumber =
+      totalPages - firstPageNumber < 6 ? totalPages : firstPageNumber + 6;
+    firstPageNumber =
+      lastPageNumber - firstPageNumber < 6
+        ? lastPageNumber - 6
+        : firstPageNumber;
+
+    html += Templates.pageNavigationButton(
+      1,
+      'start',
+      currentPage > 1 ? 'active' : 'disabled'
+    );
+    html += Templates.pageNavigationButton(
+      currentPage - 1,
+      'prev',
+      currentPage > 1 ? 'active' : 'disabled'
+    );
+    if (firstPageNumber > 1) html += Templates.pageNumberDots();
+
+    for (let i = firstPageNumber; i <= lastPageNumber; i++) {
+      html += Templates.pageNumberButtonHtml(i, i == currentPage);
+    }
+    if (lastPageNumber < totalPages) html += Templates.pageNumberDots();
+
+    html += Templates.pageNavigationButton(
+      currentPage + 1,
+      'next',
+      currentPage < totalPages ? 'active' : 'disabled'
+    );
+    html += Templates.pageNavigationButton(
+      totalPages,
+      'end',
+      currentPage < totalPages ? 'active' : 'disabled'
+    );
+  }
+
   document.getElementById('pages').innerHTML = html;
   addPageButtonEvents();
 }
@@ -85,6 +128,8 @@ async function drawExercises() {
     currentPage,
     exercisesLimit
   );
+
+  listElem.innerHTML = '';
 
   for (let exercise of exercisesResponse.results) {
     const card = new ExerciseCard();
@@ -146,10 +191,10 @@ function addFilterEvents() {
 }
 
 function addPageButtonEvents() {
-  document.querySelectorAll('a[name="page-number-button"]').forEach(btn => {
+  document.querySelectorAll('[name="page-number-button"]').forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
-      currentPage = this.dataset.pageNumber;
+      currentPage = +this.dataset.pageNumber;
       if (currentFilter) {
         drawExercises();
       } else {
@@ -159,10 +204,38 @@ function addPageButtonEvents() {
   });
 }
 
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+let lastKeyword = '';
+
 function addSearchEvents() {
-  document.getElementById('search').addEventListener('keyup', function (e) {
-    e.preventDefault();
-    currentKeyword = this.value.trim();
-    drawExercises();
+  const searchInput = document.getElementById('search');
+
+  const debouncedSearch = debounce(function () {
+    const keyword = this.value.trim();
+    if (keyword !== lastKeyword) {
+      lastKeyword = keyword;
+      currentKeyword = keyword;
+      drawExercises();
+    }
+  }, 1000);
+
+  searchInput.addEventListener('keyup', function (e) {
+    const keyword = this.value.trim();
+    if (e.key === 'Enter') {
+      if (keyword !== lastKeyword) {
+        lastKeyword = keyword;
+        currentKeyword = keyword;
+        drawExercises(); // fire immediately
+      }
+    } else {
+      debouncedSearch.call(this);
+    }
   });
 }
