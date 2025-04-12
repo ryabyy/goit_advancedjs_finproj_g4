@@ -76,7 +76,6 @@ function initializeTopNavigation() {
   document
     .getElementById('favorites-page-button')
     .addEventListener('click', function (e) {
-      debugger;
       e.preventDefault();
       document.getElementById('home-page').style.display = 'none';
       document.getElementById('favorites-page').style.display = 'block';

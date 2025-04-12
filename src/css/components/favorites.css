@@ -60,24 +60,25 @@ body {
   object-position: top;
 }
 
-
-@media only screen and (min-width: 768px) {}
-
 @media only screen and (min-width: 1280px) {
   .favorites__info-panel {
     width: 35%;
   }
+
   .favorites__list {
     width: 65%;
   }
+
   .info-panel__hint {
     display: flex;
     gap: 16px;
   }
+
   .hint-container,
   .favorites-img {
     width: 50%;
   }
+
   .exer-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -88,4 +89,3 @@ body {
     overflow-y: scroll;
   }
 }
-
