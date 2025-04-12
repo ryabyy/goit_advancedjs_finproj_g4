@@ -2,23 +2,6 @@ const Container = document.querySelector('.categories-container');
 const Items = Container.querySelectorAll('.category');
 const ActiveItem = Container.querySelector('.category--active');
 const Switcher = Container.querySelector('.switcher');
-const burgerMenu = document.getElementById('burger-menu');
-const sideMenu = document.getElementById('side-menu');
-const sideMenuClose = document.getElementById('side-menu-close');
-
-burgerMenu.addEventListener('click', () => {
-  sideMenu.style.right = '0';
-});
-
-sideMenuClose.addEventListener('click', () => {
-  sideMenu.style.right = '-100%';
-});
-
-document.addEventListener('click', (event) => {
-  if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
-    sideMenu.style.right = '-100%';
-  }
-});
 
 function moveSwitcherTo(item) {
   Switcher.style.width = `${item.offsetWidth}px`;
