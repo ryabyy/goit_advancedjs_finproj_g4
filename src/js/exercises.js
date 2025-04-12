@@ -1,6 +1,7 @@
 import { ApiService, StorageService } from './services.js';
 import { Templates } from './templates.js';
 import { showExerciseDetails } from './modal_exercise.js';
+import { Quote } from './quote.js';
 
 const FilterTypes = Object.freeze({
   MUSCLES: 'Muscles',
@@ -22,9 +23,9 @@ export async function InitializeExercisesSection() {
 }
 
 async function drawDailyQuote() {
-  const quote = await StorageService.loadDailyQuote();
-  document.getElementById('quote-author').innerText = quote.author;
-  document.getElementById('quote-body').innerText = quote.quote;
+  const quoteElem = new Quote(Quote.PAGES.HOME, 'exercises-sidebar');
+  const { quote, author } = await StorageService.loadDailyQuote();
+  quoteElem.updateQuote({ quote, author });
 }
 
 async function drawFilterTypes() {

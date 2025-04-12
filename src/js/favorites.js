@@ -1,9 +1,11 @@
 import { FavoritesCard } from './favorites-card.js';
 import { ApiService, StorageService } from './services.js';
 import { showExerciseDetails } from './modal_exercise.js';
+import { Quote } from './quote.js';
 
 const EMPTY_MSG = "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future."
 
+const quoteElem = new Quote(Quote.PAGES.FAVORITES, 'favorites__info-panel');
 const listContainer = document.querySelector('.favorites__list');
 const emptyListElem = document.createElement('div');
 const emptyListText = document.createElement('p');
@@ -15,13 +17,13 @@ emptyListElem.classList.add('list__empty-msg');
 emptyListText.innerText = EMPTY_MSG;
 listElem.classList.add('exer-list');
 
-favNavBtn.addEventListener('pointerup', (e) => {
+favNavBtn.addEventListener('pointerup', async (e) => {
+  await updateQuote();
   const favList = StorageService.loadFavorites();
   if (favList.length === 0) {
     showEmptyMsg();
     return;
   }
-
   updateList(favList);
 });
 
@@ -40,6 +42,11 @@ function clearList() {
   }
   listElem.remove();
   emptyListElem.remove();
+}
+
+async function updateQuote() {
+  const { quote, author } = await StorageService.loadDailyQuote();
+  quoteElem.updateQuote({ quote, author });
 }
 
 function addCard(id) {
