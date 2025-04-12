@@ -19,6 +19,7 @@
 
 /* Sections style */
 @import url('./components/header.css');
+@import url('./components/side-menu.css');
 @import url('./components/hero.css');
 @import url('./components/exercises.css');
 @import url('./components/favorites.css');
