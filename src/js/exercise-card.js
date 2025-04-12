@@ -15,7 +15,7 @@ export class ExerciseCard extends Card {
   }
 
   getPostTagItem() {
-    const item = document.createElement('div');
+    const item = super.getPostTagItem();
     const span = document.createElement('span');
     const icon = this.getIcon('18', '18', 'rating-star-orange');
     item.append(span, icon);

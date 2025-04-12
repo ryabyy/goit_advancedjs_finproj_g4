@@ -1,4 +1,4 @@
-export class Card {
+export class Card{
   #STATS_CLASS_NAMES = { // enum
       CALORIES: 'cal',
       PART: 'part',
@@ -10,33 +10,39 @@ export class Card {
     { name: 'Target', className: this.#STATS_CLASS_NAMES.TARGET },
   ];
 
-  #listId;
-  listContainer; // protected
+  #card;
+  #startBtn;
 
-  constructor(listId) {
-    this.#listId = listId;
-    this.listContainer = document.querySelector(`#${listId}`);
+  constructor() {
+    this.#card = this.#createCard();
+    this.#startBtn = this.#card.querySelector('.exer-card__start-btn');
   }
 
-  updateList(list) {
-    list.forEach(({ name, burnedCalories, bodyPart, target }) => {
-      const card = this.#getCard();
-      this.listContainer.append(card);
-      card.querySelector('.exer-card__name__text')
-        .innerText = this.#truncateString(name[0].toUpperCase() + name.slice(1), 34);
-      this.#getStatsValueEl(card, this.#STATS_CLASS_NAMES.CALORIES)
-        .innerText = this.#truncateString(burnedCalories.toString(), 5);
-      this.#getStatsValueEl(card, this.#STATS_CLASS_NAMES.PART)
-        .innerText = this.#truncateString(bodyPart, 5);
-      this.#getStatsValueEl(card, this.#STATS_CLASS_NAMES.TARGET)
-        .innerText = this.#truncateString(target, 5);
-    });
+  get card() {
+    return this.#card;
+  }
+
+  get startBtn() {
+    return this.#startBtn;
+  }
+
+  updateCard({ name, burnedCalories, bodyPart, target }) {
+    //update card name
+    this.#card.querySelector('.exer-card__name__text')
+      .innerText = this.#truncateString(name[0].toUpperCase() + name.slice(1), 34);
+    // update stats
+    this.#card.querySelector(`.${this.#STATS_CLASS_NAMES.CALORIES} span`)
+      .innerText = this.#truncateString(burnedCalories.toString(), 5);
+    this.#card.querySelector(`.${this.#STATS_CLASS_NAMES.PART} span`)
+      .innerText = this.#truncateString(bodyPart, 5);
+    this.#card.querySelector(`.${this.#STATS_CLASS_NAMES.TARGET} span`)
+      .innerText = this.#truncateString(target, 5);
   }
 
   onStart() {}
 
-  #getCard() {
-    const li = document.createElement('li');
+  #createCard() {
+    const li = document.createElement('exer-card');
     li.classList.add('exer-list__card');
 
     // Item header
@@ -89,10 +95,6 @@ export class Card {
     container.innerText = `${name}: `;
     container.appendChild(span);
     return container;
-  }
-
-  #getStatsValueEl(container, className) {
-    return container.querySelector(`#${this.#listId} .${className} span`);
   }
 
   getIcon(width, height, id) { // protected
