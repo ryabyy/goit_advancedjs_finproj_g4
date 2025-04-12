@@ -204,25 +204,28 @@ function addPageButtonEvents() {
   });
 }
 
-function addSearchEvents() {
-  document.getElementById('search').addEventListener('keyup', function (e) {
-    e.preventDefault();
-    currentKeyword = this.value.trim();
-    drawExercises();
-  });
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
 }
 
-function addStartExerciseEvents() {
-  document.querySelectorAll("[name='exercise-start']").forEach(btn => {
-    btn.addEventListener('click', async function (e) {
-      e.preventDefault();
-      const exercise = await ApiService.fetchExerciseByID(
-        btn.dataset.exerciseId
-      );
-      const isFavorite = StorageService.loadFavorites().some(
-        x => x._id == exercise._id
-      );
-      showExerciseDetails(exercise, isFavorite);
-    });
+function addSearchEvents() {
+  const searchInput = document.getElementById('search');
+
+  const debouncedSearch = debounce(function () {
+    currentKeyword = this.value.trim();
+    drawExercises();
+  }, 1000);
+
+  searchInput.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+      currentKeyword = this.value.trim();
+      drawExercises();
+    } else {
+      debouncedSearch.call(this);
+    }
   });
 }
