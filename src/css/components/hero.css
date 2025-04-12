@@ -1,7 +1,11 @@
 .container {
   width: 100%;
-  margin-top: 80px;
+  margin: 0 auto;
   padding: 0 20px;
+}
+
+.hero {
+  margin-top: 80px;
 }
 
 .hero__container {
@@ -62,8 +66,11 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    margin: 100px auto 0;
     padding: 0 32px;
+  }
+
+  .hero {
+    margin-top: 100px;
   }
 
   .hero__title-icon {
@@ -100,9 +107,12 @@
 
 @media screen and (min-width: 1440px) {
   .container {
-    margin: 96px auto 0;
     padding: 0 32px;
     max-width: 1440px;
+  }
+
+  .hero {
+    margin-top: 96px;
   }
 
   .hero__container {
