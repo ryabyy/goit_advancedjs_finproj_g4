@@ -12,8 +12,8 @@ export class FavoritesCard extends Card {
     return this.#removeBtn;
   }
 
-  getPostTagItem() {
-    const item = super.getPostTagItem();
+  _getPostTagItem() {
+    const item = super._getPostTagItem();
     const removeBtn = document.createElement('button');
     removeBtn.append(this.getIcon('16', '16', 'trash-black'));
     item.append(removeBtn);

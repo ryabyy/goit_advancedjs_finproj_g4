@@ -10,16 +10,16 @@ export class Card{
     { name: 'Target', className: this.#STATS_CLASS_NAMES.TARGET },
   ];
 
-  #card;
+  _card;
   #startBtn;
 
   constructor() {
-    this.#card = this.#createCard();
-    this.#startBtn = this.#card.querySelector('.exer-card__start-btn');
+    this._card = this.#createCard();
+    this.#startBtn = this._card.querySelector('.exer-card__start-btn');
   }
 
   get card() {
-    return this.#card;
+    return this._card;
   }
 
   get startBtn() {
@@ -28,18 +28,16 @@ export class Card{
 
   updateCard({ name, burnedCalories, bodyPart, target }) {
     //update card name
-    this.#card.querySelector('.exer-card__name__text')
+    this._card.querySelector('.exer-card__name__text')
       .innerText = this.#truncateString(name[0].toUpperCase() + name.slice(1), 34);
     // update stats
-    this.#card.querySelector(`.${this.#STATS_CLASS_NAMES.CALORIES} span`)
+    this._card.querySelector(`.${this.#STATS_CLASS_NAMES.CALORIES} span`)
       .innerText = this.#truncateString(burnedCalories.toString(), 5);
-    this.#card.querySelector(`.${this.#STATS_CLASS_NAMES.PART} span`)
+    this._card.querySelector(`.${this.#STATS_CLASS_NAMES.PART} span`)
       .innerText = this.#truncateString(bodyPart, 5);
-    this.#card.querySelector(`.${this.#STATS_CLASS_NAMES.TARGET} span`)
+    this._card.querySelector(`.${this.#STATS_CLASS_NAMES.TARGET} span`)
       .innerText = this.#truncateString(target, 5);
   }
-
-  onStart() {}
 
   #createCard() {
     const li = document.createElement('exer-card');
@@ -49,7 +47,7 @@ export class Card{
     const header = document.createElement('div');
     const tagBox = document.createElement('div');
     const tag = document.createElement('div');
-    const postTag = this.getPostTagItem();
+    const postTag = this._getPostTagItem();
     const startBtn = document.createElement('button');
     header.classList.add('exer-card__header');
     tagBox.classList.add('exer-card__tag-box');
@@ -84,7 +82,7 @@ export class Card{
     return li;
   }
 
-  getPostTagItem() { // protected
+  _getPostTagItem() { // protected
     return document.createElement('div');
   }
 
