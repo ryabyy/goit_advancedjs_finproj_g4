@@ -58,11 +58,15 @@
       </button>
 
       <div class="side-menu" id="side-menu">
-        <button class="side-menu__close" id="side-menu-close">&times;</button>
-        <ul class="side-menu__list">
-          <li><a href="#" class="side-menu__link">Home</a></li>
-          <li><a href="#" class="side-menu__link">Favorites</a></li>
-        </ul>
+        <button class="side-menu__close" id="side-menu-close">
+          <svg class="menu-btn-icon" width="32" height="32">
+            <use href="./assets/img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="button-container">
+          <button class="button">Home</button>
+          <button class="button">Favorites</button>
+        </div>
         <ul class="side-menu__networks">
           <li>
             <a href="#" class="side-menu__network-link">

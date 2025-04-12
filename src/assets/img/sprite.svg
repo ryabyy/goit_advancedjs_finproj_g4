@@ -53,8 +53,8 @@
     <circle cx="50" cy="50" r="50" fill="#242424"></circle>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M51.6192 37.4778L51.6192 63.0059L48.9033 63.0059L48.9033 37.4778L36.1392 50.2419L34.2187 48.3214L50.2612 32.2789L66.3037 48.3214L64.3833 50.2419L51.6192 37.4778Z" fill="#F4F4F4" stroke="#F4F4F4" stroke-width="0.3"></path>
   </symbol>
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="icon-close">
-    <path d="M12.75 5.25L5.25 12.75M5.25 5.25L12.75 12.75" stroke="#242424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-close">
+    <path d="M24 8 8 24M8 8l16 16" stroke="#f4f4f4" stroke-width="1.5"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="search">
     <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#242424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>

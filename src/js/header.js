@@ -14,6 +14,12 @@ sideMenuClose.addEventListener('click', () => {
   sideMenu.style.right = '-100%';
 });
 
+document.addEventListener('click', (event) => {
+  if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
+    sideMenu.style.right = '-100%';
+  }
+});
+
 function moveSwitcherTo(item) {
   Switcher.style.width = `${item.offsetWidth}px`;
   Switcher.style.left = `${item.offsetLeft}px`;
