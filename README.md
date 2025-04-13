@@ -1,6 +1,6 @@
 # YourEnergy website
 
-This website is produced as an educational team assignment. It showcases the skills of implementing a website design taken from Figma into a structured Vite project. The scope of the project does not cover any backend implementation, but does include a number of interacting behaviors, like interaction with a given API and inegration of localStorage.
+This website is produced as an educational team assignment. It showcases the skills of implementing a website design taken from Figma into a structured Vite project. The scope of the project does not cover any backend implementation, but does include a number of interacting behaviors, like communication with a given API and integration of localStorage.
 
 
 ### Important links of the project:
@@ -51,6 +51,9 @@ Since the project is produced by a team, some of the used technologies might dif
 - Google Fonts - for a custom font used in the design
 - Image optimization and packaging services: https://squoosh.app/, https://icomoon.io/, https://svgomg.net/
 - Font conversion/optimization: https://webfont.yabe.land/en/misc/convert-ttf-woff2/
+- HTTP client: https://axios-http.com/
+- Info/error popup messages: https://marcelodolza.github.io/iziToast/
+- Lightbox implementation: https://basiclightbox.electerious.com/
 - Code validators: https://validator.w3.org/ & https://jigsaw.w3.org/css-validator/
 - Page speed testing: https://pagespeed.web.dev/
 
