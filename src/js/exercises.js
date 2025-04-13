@@ -16,10 +16,14 @@ let currentFilterType = FilterTypes.MUSCLES;
 let currentFilter;
 let currentKeyword;
 
+const loader = document.querySelector('.loader');
+
 export async function InitializeExercisesSection() {
   drawFilterTypes();
   addSearchEvents();
+  loader.classList.add('visible');
   await drawExerciseFilters(currentFilterType);
+  loader.classList.remove('visible');
   await drawDailyQuote();
 }
 
@@ -134,7 +138,9 @@ async function drawExercises() {
   for (let exercise of exercisesResponse.results) {
     const card = new ExerciseCard();
     card.startBtn.addEventListener('pointerup', async function (e) {
-      const isFavorite = StorageService.loadFavorites().some(x => x._id === exercise.id);
+      const isFavorite = StorageService.loadFavorites().some(
+        x => x._id === exercise.id
+      );
       showExerciseDetails(exercise, isFavorite);
     });
     card.updateCard(exercise);
