@@ -183,7 +183,7 @@
   position: relative;
 }
 
-.exercises-grid .exer-list__card {
+.exercises-grid .exer-card {
   width: 49%;
 }
 
@@ -339,7 +339,7 @@
 }
 
 @media (max-width: 905px) {
-  .exercises-grid .exer-list__card {
+  .exercises-grid .exer-card {
     width: 100%;
   }
 }
