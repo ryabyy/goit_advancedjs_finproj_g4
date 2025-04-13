@@ -132,6 +132,11 @@
     height: 141px;
   }
 
+  .hint-content__title {
+    font-size: var(--quote-header-font-size);
+    line-height: 1.333;
+  }
+
   .favorites__list {
     padding-left: 32px;
     padding-right: 12px;
