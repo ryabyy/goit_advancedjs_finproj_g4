@@ -59,6 +59,7 @@ import './js/subscribe-form.js';
 document.addEventListener('DOMContentLoaded', function () {
   InitializeExercisesSection();
   initializeTopNavigation();
+  initializeScrollToTop();
 });
 
 function initializeTopNavigation() {
@@ -83,4 +84,37 @@ function initializeTopNavigation() {
       document.getElementById('home-page').style.display = 'none';
       document.getElementById('favorites-page').style.display = 'block';
     });
+}
+
+function initializeScrollToTop() {
+  const scrollButton = document.getElementById('top-button');
+  scrollButton.addEventListener('click', function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+
+  window.onscroll = function () {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      scrollButton.style.display = 'block';
+    } else {
+      scrollButton.style.display = 'none';
+    }
+  };
+
+  const iconUse = document.getElementById('top-button-icon');
+
+  function updateIconBasedOnScreenSize() {
+    if (window.innerWidth <= 600) {
+      iconUse.setAttribute('href', './sprite.svg#arrow-to-top-small');
+    } else {
+      iconUse.setAttribute('href', './sprite.svg#arrow-to-top-bog');
+    }
+  }
+
+  updateIconBasedOnScreenSize();
+
+  window.addEventListener('resize', updateIconBasedOnScreenSize);
 }
