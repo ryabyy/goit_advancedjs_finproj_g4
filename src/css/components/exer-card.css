@@ -1,11 +1,11 @@
-.exer-list__card {
+.exer-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
   height: 141px;
   border-radius: 20px;
-  background-color: #ffffff;
+  background-color: var(--white-color);
 }
 
 .exer-card__header {
@@ -24,7 +24,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1;
-  border: 1px solid #242424;
+  border: 1px solid var(--black-color);
   border-radius: 15px;
 }
 
@@ -50,11 +50,11 @@
 .exer-card__start-btn {
   display: flex;
   align-items: center;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.285;
   border: none;
   background-color: transparent;
-  color: #242424;
+  color: var(--black-color);
 }
 
 .exer-card__start-btn svg {
@@ -67,7 +67,7 @@
 
 .exer-card__name__icon {
   margin-right: 16px;
-  color: #242424;
+  color: var(--black-color);
 }
 
 .exer-card__name__text {
@@ -81,11 +81,24 @@
 }
 
 .exer-card__stats__param {
+  /*width: 30%;*/
   font-size: 12px;
   line-height: 1.5;
-  color: #24242466;
+  color: var(--black66-color);
 }
 
 .exer-card__stats__param span {
-  color: #242424;
+  color: var(--black-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .exer-card__start-btn {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .exer-card__name__text {
+    font-size: 24px;
+    line-height: 1.333;
+  }
 }

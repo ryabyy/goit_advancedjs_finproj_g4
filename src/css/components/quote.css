@@ -2,25 +2,25 @@
   display: flex;
   gap: 20px;
   padding: 20px;
-  border-radius: 20px;
-  background-color: #242424;
-  color: #F4F4F4;
+  border-radius: var(--quote-section-border-radius);
+  background-color: var(--black-color);
+  color: var(--light-color);
 }
 
 .quote-header__title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: var(--quote-header-font-size-mobile);
   line-height: 1;
 }
 
 .quote-body {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: var(--quote-text-font-size);
   line-height: 1.285;
 }
 
 .quote-body__text {
-  color: #F4F4F499;
+  color: var(--light99-color);
 }
 
 .quote-body__author {
@@ -32,10 +32,13 @@
   justify-content: space-between;
 }
 
-@media only screen and (min-width: 768px) {}
-
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 768px) {
   .quote {
     padding: 40px;
+  }
+
+  .quote-header__title {
+    font-size: var(--quote-header-font-size);
+    line-height: 1.333;
   }
 }

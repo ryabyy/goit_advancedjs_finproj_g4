@@ -1,4 +1,4 @@
-export class Card{
+export class Card {
   #STATS_CLASS_NAMES = { // enum
       CALORIES: 'cal',
       PART: 'part',
@@ -27,21 +27,21 @@ export class Card{
   }
 
   updateCard({ name, burnedCalories, bodyPart, target }) {
-    //update card name
+    // update card name
     this._card.querySelector('.exer-card__name__text')
-      .innerText = this.#truncateString(name[0].toUpperCase() + name.slice(1), 34);
+      .innerText = this.#truncateString(name[0].toUpperCase() + name.slice(1), 22);
     // update stats
     this._card.querySelector(`.${this.#STATS_CLASS_NAMES.CALORIES} span`)
-      .innerText = this.#truncateString(burnedCalories.toString(), 5);
+      .innerText = this.#truncateString(burnedCalories.toString(), 9);
     this._card.querySelector(`.${this.#STATS_CLASS_NAMES.PART} span`)
-      .innerText = this.#truncateString(bodyPart, 5);
+      .innerText = this.#truncateString(bodyPart, 9);
     this._card.querySelector(`.${this.#STATS_CLASS_NAMES.TARGET} span`)
-      .innerText = this.#truncateString(target, 5);
+      .innerText = this.#truncateString(target, 9);
   }
 
   #createCard() {
-    const li = document.createElement('exer-card');
-    li.classList.add('exer-list__card');
+    const li = document.createElement('li');
+    li.classList.add('exer-card');
 
     // Item header
     const header = document.createElement('div');
