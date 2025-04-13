@@ -57,7 +57,7 @@ function initializeScrollToTop() {
   const iconUse = document.getElementById('top-button-icon');
 
   function updateIconBasedOnScreenSize() {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 768) {
       iconUse.setAttribute('href', './sprite.svg#arrow-to-top-small');
     } else {
       iconUse.setAttribute('href', './sprite.svg#arrow-to-top-big');
