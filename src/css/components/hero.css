@@ -20,6 +20,11 @@
   margin-bottom: 20px;
 }
 
+.hero__title-icon {
+  position: relative;
+  top: 5px;
+}
+
 .hero__title-text {
   font-size: 38px;
   font-weight: 450;
@@ -76,6 +81,7 @@
   .hero__title-icon {
     width: 59px;
     height: 59px;
+    top: 6px;
   }
 
   .hero__title-text {
