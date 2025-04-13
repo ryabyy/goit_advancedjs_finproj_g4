@@ -1,5 +1,5 @@
 .header {
-  padding: 28px 0;
+  padding-top: 20px;
 }
 
 .nav__logo {
@@ -72,4 +72,16 @@
 .nav__network-item:focus,
 .nav__network-item:hover {
   scale: 1.1;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    padding-top: 28px;
+  }
 }
