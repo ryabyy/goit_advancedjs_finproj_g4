@@ -47,6 +47,11 @@ export function showExerciseDetails(exercise, isFavorite) {
       onShow: instance => {
         instance.element().querySelector('.modal-close-button').onclick =
           instance.close;
+        window.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            instance.close;
+          }
+        });
       },
     }
   );
