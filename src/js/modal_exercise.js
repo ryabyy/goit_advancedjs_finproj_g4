@@ -1,6 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { StorageService } from './services';
+import { updateFavoritesList } from './favorites';
 
 export function showExerciseDetails(exercise, isFavorite) {
   const infoItems = {
@@ -70,6 +71,7 @@ export function showExerciseDetails(exercise, isFavorite) {
     }
     isFavorite = !isFavorite;
     favButton.innerHTML = createFavButtonInnerMarkup(isFavorite);
+    updateFavoritesList();
   });
 }
 
