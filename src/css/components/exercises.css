@@ -370,6 +370,7 @@
   .exercises-banner {
     min-width: auto;
     width: 100%;
+    max-width: none;
   }
   .exercises-sidebar .hint-container {
     width: 100%;
