@@ -61,7 +61,7 @@
   font-weight: 400;
 }
 
-.nav__network-link {
+.nav__network_head-link {
   display: none;
 }
 
@@ -92,7 +92,7 @@
   .categories,
   .nav__networks,
   .nav__network-item,
-  .nav__network-link {
+  .nav__network_head-link {
     display: flex;
   }
   .header {
