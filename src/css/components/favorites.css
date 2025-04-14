@@ -75,7 +75,7 @@
   gap: 20px;
   padding-right: 6px;
   height: calc((141px + 20px) * 4);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .list__empty-msg {

@@ -23,8 +23,13 @@
   display: flex;
 }
 
+.nav__network-item {
+  display: flex;
+}
+
 .footer-network {
   margin-bottom: 40px;
+  max-width: 300px;
 }
 
 .footer-network .nav__logo {
@@ -165,5 +170,9 @@
   .footer-slogan {
     font-size: 56px;
     line-height: 60px;
+  }
+
+  .subscribe-form {
+    max-width: 352px;
   }
 }
