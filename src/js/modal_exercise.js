@@ -13,7 +13,9 @@ export function showExerciseDetails(exercise, isFavorite) {
   };
 
   const escCallback = event => {
-    instance.close();
+    if (event.key === 'Escape') {
+      instance.close();
+    }
   };
 
   const instance = basicLightbox.create(
@@ -52,11 +54,6 @@ export function showExerciseDetails(exercise, isFavorite) {
       onShow: instance => {
         instance.element().querySelector('.modal-close-button').onclick =
           instance.close;
-        window.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') {
-            instance.close;
-          }
-        });
       },
       onClose: instance => {
         document.body.removeEventListener('keydown', escCallback);
