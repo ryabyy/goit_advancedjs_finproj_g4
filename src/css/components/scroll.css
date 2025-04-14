@@ -19,7 +19,7 @@
   height: 100px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   #top-button {
     width: 60px;
     height: 60px;

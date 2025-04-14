@@ -1,6 +1,4 @@
-import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { ApiService, StorageService, ApiError } from './js/services';
 import { InitializeExercisesSection } from './js/exercises';
 import './js/favorites.js';
 import './js/tags.js';
@@ -39,8 +37,10 @@ function initializeTopNavigation() {
 function initializeScrollToTop() {
   const scrollButton = document.getElementById('top-button');
   scrollButton.addEventListener('click', function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   });
 
   window.onscroll = function () {
@@ -57,7 +57,7 @@ function initializeScrollToTop() {
   const iconUse = document.getElementById('top-button-icon');
 
   function updateIconBasedOnScreenSize() {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 768) {
       iconUse.setAttribute('href', './sprite.svg#arrow-to-top-small');
     } else {
       iconUse.setAttribute('href', './sprite.svg#arrow-to-top-big');

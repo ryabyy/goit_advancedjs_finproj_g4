@@ -5,6 +5,7 @@
 .nav__logo {
   display: flex;
   cursor: pointer;
+  height: 32px;
 }
 
 .nav {
@@ -13,7 +14,7 @@
 }
 
 .categories {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   min-width: 265px;
@@ -61,12 +62,21 @@
 }
 
 .nav__networks {
-  display: flex;
+  display: none;
   gap: 12px;
 }
 
 .nav__network-item {
+  display: none;
+}
+
+.nav__network-item {
   transition: 0.3s;
+}
+
+.nav__icon {
+  width: 44px;
+  height: 44px;
 }
 
 .nav__network-item:focus,
@@ -75,13 +85,22 @@
 }
 
 @media screen and (min-width: 768px) {
+  .categories,
+  .nav__networks,
+  .nav__network-item {
+    display: flex;
+  }
   .header {
     padding-top: 24px;
+  }
+  .nav__logo {
+    height: 52px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .header {
     padding-top: 28px;
+    padding-top: 42px;
   }
 }

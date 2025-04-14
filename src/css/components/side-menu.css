@@ -31,7 +31,7 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: 60%;
+  width: 56%;
   height: 100%;
   background-color: var(--black-color);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -65,8 +65,8 @@
 
 .side-menu__network-link {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
 }
 
 .side-menu__network-link .nav__icon {
