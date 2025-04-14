@@ -386,6 +386,10 @@
   display: none;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .loader.visible {
