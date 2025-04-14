@@ -309,6 +309,7 @@
   .exercises-sidebar .quote {
     max-width: 400px;
     min-height: 200px;
+    padding: 40px;
   }
 
   .exercises-banner {
@@ -355,6 +356,10 @@
   .exercises-sidebar .hint-container {
     width: 100%;
   }
+  .exercises-sidebar .quote-header__title {
+   font-weight: 500;
+   font-size: 24px;; 
+  }
 }
 
 @media (max-width: 575px) {
@@ -374,6 +379,7 @@
   .exercises-sidebar .quote {
     max-width: 100%;
     min-width: 100%;
+    padding: 20px;
   }
 }
 
