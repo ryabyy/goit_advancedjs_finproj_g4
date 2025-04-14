@@ -37,7 +37,9 @@ function closeSideMenu() {
 }
 
 window.addEventListener('keydown', function (event) {
-  closeSideMenu();
+  if (event.key === 'Escape') {
+    closeSideMenu();
+  }
 });
 
 function initializeSideMenuNavigation() {

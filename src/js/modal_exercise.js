@@ -12,6 +12,10 @@ export function showExerciseDetails(exercise, isFavorite) {
     'Burned Calories': `${exercise.burnedCalories} / ${exercise.time} min`,
   };
 
+  const escCallback = event => {
+    instance.close();
+  };
+
   const instance = basicLightbox.create(
     `
         <div class="modal-container">
@@ -54,6 +58,9 @@ export function showExerciseDetails(exercise, isFavorite) {
           }
         });
       },
+      onClose: instance => {
+        document.body.removeEventListener('keydown', escCallback);
+      },
     }
   );
 
@@ -73,6 +80,8 @@ export function showExerciseDetails(exercise, isFavorite) {
     favButton.innerHTML = createFavButtonInnerMarkup(isFavorite);
     updateFavoritesList();
   });
+
+  document.body.addEventListener('keydown', escCallback);
 }
 
 function createRatingStarsMarkup(rating) {

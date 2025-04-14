@@ -139,7 +139,7 @@ async function drawExercises() {
     const card = new ExerciseCard();
     card.startBtn.addEventListener('pointerup', async function (e) {
       const isFavorite = StorageService.loadFavorites().some(
-        x => x._id === exercise.id
+        x => x._id === exercise._id
       );
       showExerciseDetails(exercise, isFavorite);
     });

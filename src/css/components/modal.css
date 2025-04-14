@@ -63,10 +63,12 @@
 
 .modal-exercise-rating {
   font-weight: 400;
-  font-size: var(--exercise-card-rating-font-size);
+  /*font-size: var(--exercise-card-rating-font-size);*/
   line-height: 1.5;
   color: var(--light-color);
   text-align: center;
+  padding-top: 1px;
+  padding-right: 2px;
 }
 
 .rating-icon-wrapper {
