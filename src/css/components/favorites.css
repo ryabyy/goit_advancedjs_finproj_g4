@@ -151,9 +151,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 20px;
-    row-gap: 40px;
+    row-gap: 32px;
     padding-right: 12px;
-    height: calc((141px + 20px) * 3);
+    height: calc((141px + 32px) * 3);
   }
 
   .list__empty-msg {
@@ -197,6 +197,6 @@
   }
 
   .exer-list {
-    height: calc((141px + 32px) * 3);
+    /*height: calc((141px + 32px) * 3);*/
   }
 }
