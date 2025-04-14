@@ -61,6 +61,10 @@
   font-weight: 400;
 }
 
+.nav__network-link {
+  display: none;
+}
+
 .nav__networks {
   display: none;
   gap: 12px;
@@ -87,7 +91,8 @@
 @media screen and (min-width: 768px) {
   .categories,
   .nav__networks,
-  .nav__network-item {
+  .nav__network-item,
+  .nav__network-link {
     display: flex;
   }
   .header {
