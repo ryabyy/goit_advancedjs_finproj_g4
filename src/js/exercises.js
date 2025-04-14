@@ -228,6 +228,7 @@ function addSearchEvents() {
     if (keyword !== lastKeyword) {
       lastKeyword = keyword;
       currentKeyword = keyword;
+      currentPage = 1;
       drawExercises();
     }
   }, 1000);
@@ -238,6 +239,7 @@ function addSearchEvents() {
       if (keyword !== lastKeyword) {
         lastKeyword = keyword;
         currentKeyword = keyword;
+        currentPage = 1;
         drawExercises(); // fire immediately
       }
     } else {
